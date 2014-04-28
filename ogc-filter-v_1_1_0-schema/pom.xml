@@ -18,7 +18,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.codice.thirdparty</groupId>
   <artifactId>ogc-filter-v_1_1_0-schema</artifactId>
-  <version>1.1.0_1</version>
+  <version>1.1.0_2</version>
   <name>DDF :: Thirdparty :: OGC Filter Schema 1.1.0 Bindings</name>
   <description>Provides JAXB 2.x bindings for OGC Filter Schema (Version 1.1.0).</description>
 
