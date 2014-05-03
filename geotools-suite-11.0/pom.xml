@@ -17,13 +17,13 @@
 
 	<groupId>org.codice.thirdparty</groupId>
 	<artifactId>geotools-suite</artifactId>
-	<version>8.4_1</version>
+	<version>11.0_1</version>
 	<name>Codice :: Thirdparty :: Geotools Suite</name>
 
 	<packaging>bundle</packaging>
 
 	<properties>
-		<bundle.version>8.4</bundle.version>
+		<bundle.version>11.0</bundle.version>
 	</properties>
 
 	<dependencies>
