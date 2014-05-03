@@ -13,43 +13,43 @@
  **/
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	
-	<groupId>org.codice</groupId>
-	<artifactId>thirdparty</artifactId>
-	<packaging>pom</packaging>
-	<name>Codice Thirdparty Bundles</name>
-	<version>1.0.0</version>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<modules>
-		<module>picocontainer-1.2</module>
-		<module>geotools-suite-8.4</module>
-		<module>gt-opengis-8.4</module>
-		<module>jts-1.12</module>
-		<module>commons-httpclient-3.0.1</module>
-		<module>commons-httpclient-3.1</module>
-		<module>lucene-core-3.0.2</module>
-		<module>cas-client-core-3.1.10</module>
-		<module>vecmath-1.3.2</module>
-	</modules>
+    <groupId>org.codice</groupId>
+    <artifactId>thirdparty</artifactId>
+    <packaging>pom</packaging>
+    <name>Codice Thirdparty Bundles</name>
+    <version>1.0.0</version>
 
-	<scm>
-		<url>https://github.com/codice/thirdparty.git</url>
-		<connection>scm:git:git://github.com/codice/thirdparty.git</connection>
-		<developerConnection>scm:git:git://github.com/codice/thirdparty.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
-	
-	<distributionManagement>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<url>${snapshots.repository.url}</url>
-		</snapshotRepository>
-		<repository>
-			<id>releases</id>
-			<url>${releases.repository.url}</url>
-		</repository>
-	</distributionManagement>
+    <modules>
+        <module>picocontainer-1.2</module>
+        <module>geotools-suite-11.0</module>
+        <module>gt-opengis-11.0</module>
+        <module>jts-1.12</module>
+        <module>commons-httpclient-3.0.1</module>
+        <module>commons-httpclient-3.1</module>
+        <module>lucene-core-3.0.2</module>
+        <module>cas-client-core-3.1.10</module>
+        <module>vecmath-1.3.2</module>
+    </modules>
+
+    <scm>
+        <url>https://github.com/codice/thirdparty.git</url>
+        <connection>scm:git:git://github.com/codice/thirdparty.git</connection>
+        <developerConnection>scm:git:git://github.com/codice/thirdparty.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>${snapshots.repository.url}</url>
+        </snapshotRepository>
+        <repository>
+            <id>releases</id>
+            <url>${releases.repository.url}</url>
+        </repository>
+    </distributionManagement>
 
 </project>
