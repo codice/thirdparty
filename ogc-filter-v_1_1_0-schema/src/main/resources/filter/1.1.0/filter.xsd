@@ -76,6 +76,9 @@ Copyright © 1994-2012 Open Geospatial Consortium, Inc.
    <xsd:element name="PropertyIsLike"
                 type="ogc:PropertyIsLikeType"
                 substitutionGroup="ogc:comparisonOps"/>
+   <xsd:element name="PropertyIsFuzzy"
+                type="ogc:PropertyIsFuzzyType"
+                substitutionGroup="ogc:comparisonOps"/>
    <xsd:element name="PropertyIsNull"
                 type="ogc:PropertyIsNullType"
                 substitutionGroup="ogc:comparisonOps"/>
@@ -166,6 +169,16 @@ Copyright © 1994-2012 Open Geospatial Consortium, Inc.
             <xsd:attribute name="singleChar" type="xsd:string" use="required"/>
             <xsd:attribute name="escapeChar" type="xsd:string" use="required"/>
             <xsd:attribute name="matchCase" type="xsd:boolean" use="optional" default="true"/>
+         </xsd:extension>
+      </xsd:complexContent>
+   </xsd:complexType>
+   <xsd:complexType name="PropertyIsFuzzyType">
+      <xsd:complexContent>
+         <xsd:extension base="ogc:ComparisonOpsType">
+            <xsd:sequence>
+               <xsd:element ref="ogc:PropertyName"/>
+               <xsd:element ref="ogc:Literal"/>
+            </xsd:sequence>
          </xsd:extension>
       </xsd:complexContent>
    </xsd:complexType>

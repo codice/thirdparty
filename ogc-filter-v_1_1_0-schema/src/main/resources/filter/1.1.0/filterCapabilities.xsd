@@ -123,6 +123,7 @@
          <xsd:enumeration value="Like"/>
          <xsd:enumeration value="Between"/>
          <xsd:enumeration value="NullCheck"/>
+         <xsd:enumeration value="Fuzzy"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:complexType name="ArithmeticOperatorsType">
