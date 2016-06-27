@@ -17,7 +17,7 @@
 
 	<groupId>org.codice.thirdparty</groupId>
 	<artifactId>geotools-suite</artifactId>
-	<version>8.4_1</version>
+	<version>8.4_2</version>
 	<name>Codice :: Thirdparty :: Geotools Suite</name>
 
 	<packaging>bundle</packaging>
@@ -99,7 +99,21 @@
 			<version>${bundle.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
+
 	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.2</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	
 	<repositories>
 		<repository>
