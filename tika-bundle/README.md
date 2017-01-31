@@ -15,9 +15,9 @@ The pom.xml is an altered pom.xml from the tika-bundle in the Apache Tika Projec
 
 ## Maintenance
  * When a new version of the tika-bundle is released, determine if the version of Apache POI was changed
-   - If the version of POI has been changed, determine if the version of the ooxml-schemas and ooxml-security have changed
+   - If the version of POI has been changed, determine if the version of ooxml-schemas and ooxml-security have changed
  * Change the tika version to the new version
- * If the ooxml-schemas and ooxml-security versions have changed, update them appropriately
+ * If the ooxml-schemas / ooxml-security versions have changed, update them appropriately
  * Determine if the pom.xml for the tika-bundle in the Apache Tika Project has changed
    - If yes, copy / paste the build section of the pom.xml
    - Replace poi-ooxml-schemas with ooxml-schemas and add ooxml-security to the <Embed-Dependency> section
