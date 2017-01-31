@@ -12,6 +12,8 @@
 -->
 This tika-bundle is a repackaged Apache Tika OSGi that embeds the full set of OOXML schemas instead of the default POI OOXML subset.
 The pom.xml is an altered pom.xml from the tika-bundle in the Apache Tika Project (https://github.com/apache/tika/blob/master/tika-bundle/pom.xml).
+This is the OSGI solution to the workaround described in this ticket : https://issues.apache.org/jira/browse/TIKA-2094
+
 
 ## Maintenance
  * When a new version of the tika-bundle is released, determine if the version of Apache POI was changed
