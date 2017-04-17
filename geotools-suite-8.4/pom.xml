@@ -78,7 +78,7 @@
 		<dependency>
 			<groupId>org.geotools</groupId>
 			<artifactId>gt-epsg-hsql</artifactId>
-			<version>${bundle.version}</version>
+			<version>13.1</version>
 		</dependency>
 
 		<dependency>
