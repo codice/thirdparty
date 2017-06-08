@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.codice.thirdparty</groupId>
     <artifactId>tika-bundle</artifactId>
-    <version>1.13.0_1</version>
+    <version>1.14.0_1</version>
 
     <name>Codice :: Thirdparty :: Apache Tika OSGi Bundle</name>
     <packaging>bundle</packaging>
@@ -34,7 +34,7 @@
     </description>
 
     <properties>
-        <tika.version>1.13</tika.version>
+        <tika.version>1.14</tika.version>
     </properties>
 
     <dependencies>
@@ -52,6 +52,11 @@
                 <exclusion>
                     <groupId>org.apache.poi</groupId>
                     <artifactId>poi-ooxml-schemas</artifactId>
+                </exclusion>
+                <exclusion>
+                    <!-- excluded because of vulnerabilities CVE-2016-6809-->
+                    <artifactId>jmatio</artifactId>
+                    <groupId>org.tallison</groupId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -137,7 +142,6 @@
                             cdm,
                             httpservices,
                             jcip-annotations,
-                            jmatio,
                             guava
                         </Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>
@@ -288,7 +292,6 @@
                             ucar.unidata.geoloc.projection.sat;resolution:=optional,
                             ucar.unidata.io;resolution:=optional,
                             ucar.unidata.util;resolution:=optional,
-                            com.jmatio.io;resolution:=optional,
                             com.google.gson;resolution:=optional,
                             visad;resolution:=optional,
                             visad.data;resolution:=optional,
