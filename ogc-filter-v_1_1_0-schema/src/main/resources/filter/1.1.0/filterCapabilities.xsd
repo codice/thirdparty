@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema
-   targetNamespace="http://www.opengis.net/ogc"
-   xmlns:ogc="http://www.opengis.net/ogc"
-   xmlns:gml="http://www.opengis.net/gml"
-   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-   elementFormDefault="qualified"
-   version="1.1.0">
+        xmlns:ogc="http://www.opengis.net/ogc"
+        xmlns:gml="http://www.opengis.net/gml"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.opengis.net/ogc"
+        elementFormDefault="qualified"
+        version="1.1.0">
    <xsd:annotation>
       <xsd:documentation>
          This XML Schema defines OGC query filter capabilities documents.
@@ -124,6 +124,7 @@
          <xsd:enumeration value="Between"/>
          <xsd:enumeration value="NullCheck"/>
          <xsd:enumeration value="Fuzzy"/>
+          <xsd:enumeration value="DivisibleBy"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:complexType name="ArithmeticOperatorsType">

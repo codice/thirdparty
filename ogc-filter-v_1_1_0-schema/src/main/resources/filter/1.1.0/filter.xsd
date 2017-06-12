@@ -20,12 +20,12 @@ Copyright © 1994-2012 Open Geospatial Consortium, Inc.
  * content (the actual distance text node) to be set.
  **/
 -->
-<xsd:schema targetNamespace="http://www.opengis.net/ogc"
-   xmlns:ogc="http://www.opengis.net/ogc"
-   xmlns:gml="http://www.opengis.net/gml"
-   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-   elementFormDefault="qualified"
-   version="1.1.0">
+<xsd:schema xmlns:ogc="http://www.opengis.net/ogc"
+            xmlns:gml="http://www.opengis.net/gml"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.opengis.net/ogc"
+            elementFormDefault="qualified"
+            version="1.1.0">
 
    <xsd:include schemaLocation="expr.xsd"/>
    <xsd:include schemaLocation="sort.xsd"/>
@@ -76,6 +76,9 @@ Copyright © 1994-2012 Open Geospatial Consortium, Inc.
    <xsd:element name="PropertyIsLike"
                 type="ogc:PropertyIsLikeType"
                 substitutionGroup="ogc:comparisonOps"/>
+    <xsd:element name="PropertyIsDivisibleBy"
+                 type="ogc:PropertyIsDivisibleByType"
+                 substitutionGroup="ogc:comparisonOps"/>
    <xsd:element name="PropertyIsFuzzy"
                 type="ogc:PropertyIsFuzzyType"
                 substitutionGroup="ogc:comparisonOps"/>
@@ -172,6 +175,16 @@ Copyright © 1994-2012 Open Geospatial Consortium, Inc.
          </xsd:extension>
       </xsd:complexContent>
    </xsd:complexType>
+    <xsd:complexType name="PropertyIsDivisibleByType">
+        <xsd:complexContent>
+            <xsd:extension base="ogc:ComparisonOpsType">
+                <xsd:sequence>
+                    <xsd:element ref="ogc:PropertyName"/>
+                    <xsd:element ref="ogc:Literal"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
    <xsd:complexType name="PropertyIsFuzzyType">
       <xsd:complexContent>
          <xsd:extension base="ogc:ComparisonOpsType">
