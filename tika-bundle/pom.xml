@@ -53,11 +53,6 @@
                     <groupId>org.apache.poi</groupId>
                     <artifactId>poi-ooxml-schemas</artifactId>
                 </exclusion>
-                <exclusion>
-                    <!-- excluded because of vulnerabilities CVE-2016-6809-->
-                    <artifactId>jmatio</artifactId>
-                    <groupId>org.tallison</groupId>
-                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -142,6 +137,7 @@
                             cdm,
                             httpservices,
                             jcip-annotations,
+                            jmatio,
                             guava
                         </Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>
@@ -158,6 +154,7 @@
                             !org.apache.ctakes.*,
                             !org.apache.uima.*,
                             *,
+                            org.slf4j,
                             org.apache.tika.fork,
                             android.util;resolution:=optional,
                             com.adobe.xmp;resolution:=optional,
@@ -219,6 +216,7 @@
                             org.apache.xml.resolver.tools;resolution:=optional,
                             org.apache.xml.security;resolution:=optional,
                             org.apache.xml.security.c14n;resolution:=optional,
+                            org.apache.xml.security.signature;resolution:=optional,
                             org.apache.xml.security.utils;resolution:=optional,
                             org.apache.xmlbeans.impl.xpath.saxon;resolution:=optional,
                             org.apache.xmlbeans.impl.xquery.saxon;resolution:=optional,
@@ -252,7 +250,6 @@
                             org.osgi.framework;resolution:=optional,
                             org.quartz;resolution:=optional,
                             org.quartz.impl;resolution:=optional,
-                            org.slf4j;resolution:=optional,
                             org.sqlite;resolution:=optional,
                             org.w3c.dom;resolution:=optional,
                             org.relaxng.datatype;resolution:=optional,
@@ -292,7 +289,9 @@
                             ucar.unidata.geoloc.projection.sat;resolution:=optional,
                             ucar.unidata.io;resolution:=optional,
                             ucar.unidata.util;resolution:=optional,
+                            com.jmatio.io;resolution:=optional,
                             com.google.gson;resolution:=optional,
+                            com.google.gson.reflect;resolution:=optional,
                             visad;resolution:=optional,
                             visad.data;resolution:=optional,
                             visad.data.vis5d;resolution:=optional,
@@ -349,6 +348,14 @@
                             org.apache.http.protocol;resolution:=optional,
                             org.apache.http.util;resolution:=optional
                         </Import-Package>
+                        <DynamicImport-Package>
+                            org.slf4j.impl,
+                            org.slf4j.bridge,
+                            org.apache.log4j,
+                            org.apache.log4j.*,
+                            org.apache.commons.logging,
+                            org.apache.commons.logging.*
+                        </DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
