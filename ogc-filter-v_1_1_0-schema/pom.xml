@@ -74,7 +74,7 @@
             </goals>
             <configuration>
               <schemaIncludes>
-                <value>filter/*/filter.xsd</value>
+                  <value>filter/*/filterAll.xsd</value>
                 <value>gml/*/base/gml.xsd</value>
               </schemaIncludes>
               <episodes>

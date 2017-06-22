@@ -4,7 +4,7 @@
 	jaxb:extensionBindingPrefixes="xjc">
 
 	<jaxb:bindings 
-		schemaLocation="filter/1.1.0/filter.xsd" 
+		schemaLocation="filter/1.1.0/filterAll.xsd"
 		node="/xs:schema">
 		<jaxb:globalBindings
 			fixedAttributeAsConstantProperty="true"
