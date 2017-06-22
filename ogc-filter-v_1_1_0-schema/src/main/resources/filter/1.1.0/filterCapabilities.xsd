@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema
-        xmlns:ogc="http://www.opengis.net/ogc"
-        xmlns:gml="http://www.opengis.net/gml"
-        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://www.opengis.net/ogc"
-        elementFormDefault="qualified"
-        version="1.1.3">
+   targetNamespace="http://www.opengis.net/ogc"
+   xmlns:ogc="http://www.opengis.net/ogc"
+   xmlns:gml="http://www.opengis.net/gml"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   elementFormDefault="qualified"
+   version="1.1.3">
    <xsd:annotation>
       <xsd:documentation>
          This XML Schema defines OGC query filter capabilities documents.
-
-          filter is an OGC Standard.
-          Copyright (c) 2002,2003,2004,2010 Open Geospatial Consortium.
-          To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
-
-          Updated: 2012-07-21
+         
+         filter is an OGC Standard.
+         Copyright (c) 2002,2003,2004,2010 Open Geospatial Consortium.
+         To obtain additional rights of use, visit http://www.opengeospatial.org/legal/ .
+         
+         Updated: 2012-07-21
       </xsd:documentation>
    </xsd:annotation>
    <xsd:element name="Filter_Capabilities">
@@ -129,7 +129,6 @@
          <xsd:enumeration value="Between"/>
          <xsd:enumeration value="NullCheck"/>
          <xsd:enumeration value="Fuzzy"/>
-          <xsd:enumeration value="DivisibleBy"/>
       </xsd:restriction>
    </xsd:simpleType>
    <xsd:complexType name="ArithmeticOperatorsType">
