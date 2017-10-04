@@ -17,7 +17,7 @@
 
 	<groupId>org.codice.thirdparty</groupId>
 	<artifactId>geotools-suite</artifactId>
-	<version>8.4_2</version>
+	<version>8.4_3</version>
 	<name>Codice :: Thirdparty :: Geotools Suite</name>
 
 	<packaging>bundle</packaging>
@@ -100,6 +100,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.geotools</groupId>
+			<artifactId>gt-geojson</artifactId>
+			<version>${bundle.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>commons-collections</groupId>
 			<artifactId>commons-collections</artifactId>
 		</dependency>
@@ -114,7 +120,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<repositories>
 		<repository>
 			<id>osgeo</id>
@@ -182,7 +188,7 @@
 							org.geotools.temporal.reference;version=${bundle.version},
 							org.geotools.util;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.xml.transform;version=${bundle.version},
-							
+
 							<!-- gt-referencing -->
 							org.geotools.geometry;version=${bundle.version},
 							org.geotools.measure;version=${bundle.version},
@@ -205,7 +211,7 @@
 							org.geotools.referencing.wkt;version=${bundle.version},
 							org.geotools.resources;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.resources.geometry;version=${bundle.version},
-							
+
 							<!-- gt-jts-wrapper -->
 							org.geotools.geometry.jts;version=${bundle.version},
 							org.geotools.geometry.jts.spatialschema;version=${bundle.version},
@@ -220,11 +226,11 @@
 							org.geotools.filter.v1_0;version=${bundle.version},
 							org.geotools.filter.v2_0;version=${bundle.version},
 							org.geotools.filter.v1_1;version=${bundle.version},
-							
+
 							<!-- gt-xsd-gml2 -->
 							org.geotools.gml2;version=${bundle.version},
 							org.geotools.gml2.bindings;version=${bundle.version},
-							
+
 							<!-- gt-xsd-gml3 -->
 							org.geotools.gml3;version=${bundle.version},
 							org.geotools.gml3.bindings;version=${bundle.version},
@@ -238,16 +244,16 @@
 							org.geotools.gml3.v3_2.gsr;version=${bundle.version},
 							org.geotools.gml3.v3_2.gss;version=${bundle.version},
 							org.geotools.gml3.v3_2.gts;version=${bundle.version},
-						
+
 							<!-- gt-xsd-core -->
 							org.geotools.xml;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.xlink;version=${bundle.version},
 							org.geotools.xs;version=${bundle.version},
 							org.geotools.xs.bindings;version=${bundle.version},
-							
+
 							<!-- gt-wfs -->
 							org.geotools.data.wfs;version=${bundle.version},
-							
+
 							<!-- gt-metadata -->
 							org.geotools.metadata;version=${bundle.version},
 							org.geotools.metadata.iso;version=${bundle.version},
@@ -257,6 +263,11 @@
 							org.geotools.resources.i18n;version=${bundle.version},
 							org.geotools.util.logging;version=${bundle.version},
 							org.geotools.io;version=${bundle.version}
+
+							<!-- gt-geojson -->
+							org.geotools.geojson;version=${bundle.version},
+							org.geotools.geojson.feature;version=${bundle.version},
+							org.geotools.geojson.geom;version=${bundle.version},
 						</Export-Package>
 
 						<Import-Package>
