@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.codice.thirdparty</groupId>
     <artifactId>tika-bundle</artifactId>
-    <version>1.14.0_1</version>
+    <version>1.14.0_2</version>
 
     <name>Codice :: Thirdparty :: Apache Tika OSGi Bundle</name>
     <packaging>bundle</packaging>
@@ -52,6 +52,11 @@
                 <exclusion>
                     <groupId>org.apache.poi</groupId>
                     <artifactId>poi-ooxml-schemas</artifactId>
+                </exclusion>
+                <exclusion>
+                    <!-- excluding openlp due to CVE-2017-12620 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12620 -->
+                    <groupId>org.apache.opennlp</groupId>
+                    <artifactId>opennlp-tools</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -119,8 +124,6 @@
                             boilerpipe,
                             rome,
                             rome-utils,
-                            opennlp-tools,
-                            opennlp-maxent,
                             geoapi,
                             sis-metadata,
                             sis-netcdf,
@@ -148,6 +151,7 @@
                             org.apache.tika.parser.*;version=${tika.version}
                         </Export-Package>
                         <Import-Package>
+                            !opennlp.*,
                             !org.junit,
                             !org.junit.*,
                             !junit.*,
@@ -184,8 +188,6 @@
                             opendap.dap.http;resolution:=optional,
                             opendap.dap;resolution:=optional,
                             opendap.dap.parser;resolution:=optional,
-                            opennlp.maxent;resolution:=optional,
-                            opennlp.tools.namefind;resolution:=optional,
                             net.didion.jwnl;resolution:=optional,
                             org.apache.cxf.jaxrs.client;resolution:=optional,
                             org.apache.cxf.jaxrs.ext.multipart;resolution:=optional,
