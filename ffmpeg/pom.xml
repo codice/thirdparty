@@ -11,7 +11,7 @@
 
     <groupId>org.codice.thirdparty</groupId>
     <artifactId>ffmpeg</artifactId>
-    <version>4.0</version>
+    <version>4.0_1</version>
     <name>Codice :: Thirdparty :: FFmpeg Binaries</name>
     <description>Provides 32-bit LGPL Linux, Mac, and Windows FFmpeg binaries (FFmpeg
         version 4.0). Solaris is still on version 3.1.1.
