@@ -17,13 +17,13 @@
 
 	<groupId>org.codice.thirdparty</groupId>
 	<artifactId>gt-opengis</artifactId>
-	<version>8.4_1</version>
+	<version>19.1_1</version>
 	<name>Codice :: Thirdparty :: Geotools OpenGIS API</name>
 
 	<packaging>bundle</packaging>
 
 	<properties>
-		<bundle.version>8.4</bundle.version>
+		<bundle.version>19.1</bundle.version>
 		<jsr.275.version>1.0-beta-2</jsr.275.version>
 	</properties>
 	
@@ -48,7 +48,7 @@
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<version>2.3.4</version>
+				<version>3.5.0</version>
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
@@ -63,6 +63,52 @@
 						</Embed-Dependency>
 
 						<Embed-Transitive>true</Embed-Transitive>
+						<Private-Package>
+							<!-- gt-opengis -->
+							org.opengis.annotation;version="${bundle.version}",
+							org.opengis.coverage;version="${bundle.version}",
+							org.opengis.coverage.grid;version="${bundle.version}",
+							org.opengis.coverage.processing;version="${bundle.version}",
+							org.opengis.feature;version="${bundle.version}",
+							org.opengis.feature.simple;version="${bundle.version}",
+							org.opengis.feature.type;version="${bundle.version}",
+							org.opengis.filter;version="${bundle.version}",
+							org.opengis.filter.capability;version="${bundle.version}",
+							org.opengis.filter.expression;version="${bundle.version}",
+							org.opengis.filter.identity;version="${bundle.version}",
+							org.opengis.filter.sort;version="${bundle.version}",
+							org.opengis.filter.spatial;version="${bundle.version}",
+							org.opengis.filter.temporal;version="${bundle.version}",
+							org.opengis.geometry;version="${bundle.version}",
+							org.opengis.geometry.aggregate;version="${bundle.version}",
+							org.opengis.geometry.complex;version="${bundle.version}",
+							org.opengis.geometry.coordinate;version="${bundle.version}",
+							org.opengis.geometry.primitive;version="${bundle.version}",
+							org.opengis.metadata;version="${bundle.version}",
+							org.opengis.metadata.citation;version="${bundle.version}",
+							org.opengis.metadata.constraint;version="${bundle.version}",
+							org.opengis.metadata.content;version="${bundle.version}",
+							org.opengis.metadata.distribution;version="${bundle.version}",
+							org.opengis.metadata.extent;version="${bundle.version}",
+							org.opengis.metadata.identification;version="${bundle.version}",
+							org.opengis.metadata.lineage;version="${bundle.version}",
+							org.opengis.metadata.maintenance;version="${bundle.version}",
+							org.opengis.metadata.quality;version="${bundle.version}",
+							org.opengis.metadata.spatial;version="${bundle.version}",
+							org.opengis.parameter;version="${bundle.version}",
+							org.opengis.referencing;version="${bundle.version}",
+							org.opengis.referencing.crs;version="${bundle.version}",
+							org.opengis.referencing.cs;version="${bundle.version}",
+							org.opengis.referencing.datum;version="${bundle.version}",
+							org.opengis.referencing.operation;version="${bundle.version}",
+							org.opengis.style;version="${bundle.version}",
+							org.opengis.temporal;version="${bundle.version}",
+							org.opengis.util;version="${bundle.version}",
+
+							<!-- jsr-275 -->
+							javax.measure.*;version="${jsr.275.version}",
+
+						</Private-Package>
 						<Export-Package>
 							<!-- gt-opengis -->
 							org.opengis.annotation;version="${bundle.version}",
