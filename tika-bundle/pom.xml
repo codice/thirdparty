@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.codice.thirdparty</groupId>
     <artifactId>tika-bundle</artifactId>
-    <version>1.14.0_2</version>
+    <version>1.18.0_1</version>
 
     <name>Codice :: Thirdparty :: Apache Tika OSGi Bundle</name>
     <packaging>bundle</packaging>
@@ -34,8 +34,16 @@
     </description>
 
     <properties>
-        <tika.version>1.14</tika.version>
+        <tika.version>1.18</tika.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>osgeo</id>
+            <name>Open Source Geospatial Foundation Repository</name>
+            <url>http://download.osgeo.org/webdav/geotools/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -69,6 +77,73 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>ooxml-security</artifactId>
             <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.luben</groupId>
+            <artifactId>zstd-jni</artifactId>
+            <version>1.3.4-10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.openjson</groupId>
+            <artifactId>openjson</artifactId>
+            <version>1.0.10</version>
+        </dependency>
+        <!-- order matters here, don't move these two around -->
+        <dependency>
+            <groupId>javax.measure</groupId>
+            <artifactId>unit-api</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.java.dev.jsr-275</groupId>
+            <artifactId>jsr-275</artifactId>
+            <version>1.0-beta-2</version>
+        </dependency>
+        <!-- -->
+        <dependency>
+            <groupId>net.sf.jwordnet</groupId>
+            <artifactId>jwnl</artifactId>
+            <version>1.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox-debugger</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox-tools</artifactId>
+            <version>2.0.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.esri.geometry</groupId>
+            <artifactId>esri-geometry-api</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-opengis</artifactId>
+            <version>19.1</version>
         </dependency>
     </dependencies>
 
@@ -113,7 +188,6 @@
                             jackcess,
                             commons-lang,
                             tagsoup,
-                            asm,
                             juniversalchardet,
                             vorbis-java-core,
                             vorbis-java-tika,
@@ -131,7 +205,6 @@
                             sis-storage,
                             apache-mime4j-core,
                             apache-mime4j-dom,
-                            jsr-275,
                             jhighlight,
                             java-libpst,
                             jwnl,
@@ -141,7 +214,16 @@
                             httpservices,
                             jcip-annotations,
                             jmatio,
-                            guava
+                            guava,
+                            zstd-jni,
+                            openjson,
+                            sis-feature,
+                            sis-referencing,
+                            esri-geometry-api,
+                            jackson-core,
+                            jackson-databind,
+                            jackson-annotations,
+                            dec
                         </Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>
                         <Bundle-DocURL>${project.url}</Bundle-DocURL>
@@ -150,6 +232,13 @@
                             !org.apache.tika.parser.external,
                             org.apache.tika.parser.*;version=${tika.version}
                         </Export-Package>
+                        <Private-Package>
+                            javax.measure;-split-package:=merge-last,
+                            javax.measure.quantity;-split-package:=merge-last,
+                            javax.measure.unit;-split-package:=merge-last,
+                            javax.measure.format,
+                            javax.measure.spi
+                        </Private-Package>
                         <Import-Package>
                             !opennlp.*,
                             !org.junit,

@@ -23,15 +23,14 @@
 	<version>1.0.0</version>
 
 	<modules>
-		<module>picocontainer-1.2</module>
-		<module>geotools-suite-8.4</module>
-		<module>gt-opengis-8.4</module>
-		<module>jts-1.12</module>
+		<module>picocontainer</module>
+		<module>geotools-suite</module>
+		<module>gt-opengis</module>
+		<module>jts</module>
 		<module>commons-httpclient-3.0.1</module>
 		<module>commons-httpclient-3.1</module>
 		<module>lucene-core-3.0.2</module>
 		<module>cas-client-core-3.1.10</module>
-		<module>vecmath-1.3.2</module>
 		<module>ogc-filter-v_1_1_0-schema</module>
 		<module>ffmpeg</module>
 		<module>tika-bundle</module>
