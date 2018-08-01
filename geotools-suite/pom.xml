@@ -28,6 +28,12 @@
 
 	<dependencies>
 		<dependency>
+            <groupId>org.geotools</groupId>
+            <artifactId>gt-shapefile</artifactId>
+            <version>${bundle.version}</version>
+        </dependency>
+	
+		<dependency>
 			<groupId>org.geotools</groupId>
 			<artifactId>gt-main</artifactId>
 			<version>${bundle.version}</version>
@@ -285,7 +291,17 @@
 							org.geotools.filter.text.ecql;version=${bundle.version},
 							org.geotools.filter.text.commons;version=${bundle.version},
 							org.geotools.filter.text.generated.parsers;version=${bundle.version},
-							org.geotools.filter.function;version=${bundle.version}
+							org.geotools.filter.function;version=${bundle.version},
+							
+							<!-- gt-shapefile -->
+							org.geotools.data.shapefile.dbf;version=${bundle.version},
+							org.geotools.data.shapefile.fid;version=${bundle.version},
+							org.geotools.data.shapefile.files;version=${bundle.version},
+							org.geotools.data.shapefile.index;version=${bundle.version},
+							org.geotools.data.shapefile.index.quadtree;version=${bundle.version},
+							org.geotools.data.shapefile.index.quadtree.fs;version=${bundle.version},
+							org.geotools.data.shapefile.shp;version=${bundle.version}
+							
 						</Private-Package>
 						<Export-Package>
 							<!-- gt-main -->
@@ -426,7 +442,16 @@
 							org.geotools.filter.text.ecql;version=${bundle.version},
 							org.geotools.filter.text.commons;version=${bundle.version},
 							org.geotools.filter.text.generated.parsers;version=${bundle.version},
-							org.geotools.filter.function;version=${bundle.version}
+							org.geotools.filter.function;version=${bundle.version},
+							
+							<!-- gt-shapefile -->
+							org.geotools.data.shapefile.dbf;version=${bundle.version},
+							org.geotools.data.shapefile.fid;version=${bundle.version},
+							org.geotools.data.shapefile.files;version=${bundle.version},
+							org.geotools.data.shapefile.index;version=${bundle.version},
+							org.geotools.data.shapefile.index.quadtree;version=${bundle.version},
+							org.geotools.data.shapefile.index.quadtree.fs;version=${bundle.version},
+							org.geotools.data.shapefile.shp;version=${bundle.version}
 						</Export-Package>
 
 						<Import-Package>
