@@ -17,7 +17,7 @@
 
 	<groupId>org.codice.thirdparty</groupId>
 	<artifactId>geotools-suite</artifactId>
-	<version>19.1_1</version>
+	<version>19.1_2</version>
 	<name>Codice :: Thirdparty :: Geotools Suite</name>
 
 	<packaging>bundle</packaging>
