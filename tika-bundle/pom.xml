@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.codice.thirdparty</groupId>
     <artifactId>tika-bundle</artifactId>
-    <version>1.18.0_1</version>
+    <version>1.18.0_2</version>
 
     <name>Codice :: Thirdparty :: Apache Tika OSGi Bundle</name>
     <packaging>bundle</packaging>
@@ -164,6 +164,7 @@
                             tika-parsers;inline=true,
                             commons-compress,
                             xz,
+                            asm,
                             commons-codec,
                             commons-csv,
                             commons-io,
