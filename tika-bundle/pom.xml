@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.codice.thirdparty</groupId>
     <artifactId>tika-bundle</artifactId>
-    <version>1.19.0_1</version>
+    <version>1.19.1_1</version>
 
     <name>Codice :: Thirdparty :: Apache Tika OSGi Bundle</name>
     <packaging>bundle</packaging>
@@ -34,7 +34,7 @@
     </description>
 
     <properties>
-        <tika.version>1.19</tika.version>
+        <tika.version>1.19.1</tika.version>
     </properties>
 
     <repositories>
@@ -55,16 +55,14 @@
             <groupId>org.apache.tika</groupId>
             <artifactId>tika-parsers</artifactId>
             <version>${tika.version}</version>
-            <scope>provided</scope>
             <exclusions>
                 <exclusion>
-                    <groupId>org.apache.poi</groupId>
-                    <artifactId>poi-ooxml-schemas</artifactId>
+                    <groupId>org.ow2.asm</groupId>
+                    <artifactId>asm</artifactId>
                 </exclusion>
                 <exclusion>
-                    <!-- excluding openlp due to CVE-2017-12620 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12620 -->
-                    <groupId>org.apache.opennlp</groupId>
-                    <artifactId>opennlp-tools</artifactId>
+                    <groupId>javax.xml.bind</groupId>
+                    <artifactId>jaxb-api</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -157,101 +155,102 @@
                 <configuration>
                     <instructions>
                         <_runsystempackages>com.sun.xml.bind.marshaller, com.sun.xml.internal.bind.marshaller</_runsystempackages>
+                        <!--  The file below and the _include entry may be removed once Tika targets OpenJDK 9.0 or above -->
                         <Bundle-Activator>
                             org.apache.tika.parser.internal.Activator
                         </Bundle-Activator>
-                        <Embed-Dependency>
-                            tika-parsers;inline=true,
-                            commons-compress,
-                            xz,
-                            asm,
-                            commons-codec,
-                            commons-csv,
-                            commons-io,
-                            commons-exec,
-                            commons-collections4,
-                            junrar,
-                            pdfbox,
-                            pdfbox-tools,
-                            pdfbox-debugger,
-                            fontbox,
-                            jempbox,
-                            poi,
-                            poi-scratchpad,
-                            poi-ooxml,
-                            ooxml-schemas,
-                            ooxml-security,
-                            curvesapi,
-                            xmlbeans,
-                            jackcess,
-                            commons-lang,
-                            tagsoup,
-                            juniversalchardet,
-                            vorbis-java-core,
-                            vorbis-java-tika,
-                            isoparser,
-                            metadata-extractor,
-                            xmpcore,
-                            json-simple,
-                            boilerpipe,
-                            rome,
-                            rome-utils,
-                            geoapi,
-                            sis-metadata,
-                            sis-netcdf,
-                            sis-utility,
-                            sis-storage,
-                            apache-mime4j-core,
-                            apache-mime4j-dom,
-                            jhighlight,
-                            java-libpst,
-                            jwnl,
-                            netcdf4,
-                            grib,
-                            cdm,
-                            httpservices,
-                            jcip-annotations,
-                            jmatio,
-                            guava,
-                            zstd-jni,
-                            openjson,
-                            sis-feature,
-                            sis-referencing,
-                            esri-geometry-api,
-                            jackson-core,
-                            jackson-databind,
-                            jackson-annotations,
-                            dec
-                        </Embed-Dependency>
+                        <Embed-Dependency>*;
+                            tika-parsers|
+                            commons-compress|
+                            xz|
+                            commons-codec|
+                            commons-csv|
+                            commons-io|
+                            commons-exec|
+                            commons-collections4|
+                            junrar|
+                            pdfbox|
+                            pdfbox-tools|
+                            pdfbox-debugger|
+                            fontbox|
+                            jempbox|
+                            bcmail-jdk15on|
+                            bcprov-jdk15on|
+                            bcpkix-jdk15on|
+                            poi|poi-scratchpad|
+                            poi-ooxml|
+                            poi-ooxml-schemas|
+                            curvesapi|
+                            xmlbeans|
+                            jackcess|
+                            jackcess-encrypt|
+                            commons-lang|
+                            tagsoup|
+                            juniversalchardet|
+                            vorbis-java-core|
+                            vorbis-java-tika|
+                            isoparser|
+                            metadata-extractor|
+                            xmpcore|
+                            json-simple|
+                            boilerpipe|
+                            rome|
+                            rome-utils|
+                            sentiment-analysis-parser|
+                            opennlp-tools|
+                            geoapi|
+                            sis-metadata|
+                            sis-netcdf|
+                            sis-utility|
+                            sis-storage|
+                            unit-api|
+                            apache-mime4j-core|
+                            apache-mime4j-dom|
+                            jhighlight|
+                            java-libpst|
+                            netcdf4|
+                            grib|
+                            cdm|
+                            parso|
+                            httpservices|
+                            jcip-annotations|
+                            jmatio|
+                            guava|
+                            age-predictor-api</Embed-Dependency>
                         <Embed-Transitive>true</Embed-Transitive>
                         <Bundle-DocURL>${project.url}</Bundle-DocURL>
                         <Export-Package>
                             !org.apache.tika.parser,
                             !org.apache.tika.parser.external,
-                            org.apache.tika.parser.*;version=${tika.version}
+                            org.apache.tika.parser.*,
+                            org.apache.tika.metadata.serialization.*,
                         </Export-Package>
-                        <Private-Package>
-                            javax.measure;-split-package:=merge-last,
-                            javax.measure.quantity;-split-package:=merge-last,
-                            javax.measure.unit;-split-package:=merge-last,
-                            javax.measure.format,
-                            javax.measure.spi
-                        </Private-Package>
                         <Import-Package>
-                            !opennlp.*,
                             !org.junit,
                             !org.junit.*,
                             !junit.*,
                             !org.apache.ctakes.*,
                             !org.apache.uima.*,
-                            *,
-                            org.slf4j,
+                            !org.apache.solr.client.solrj.*,
+                            !org.apache.solr.common.*,
+                            !org.apache.spark.api.java.*,
+                            !org.apache.spark.ml.*,
+                            !org.apache.spark.mllib.*,
+                            !org.apache.spark.sql.*,
+                            !com.ibm.uvm.tools.*,
+                            !com.ibm.uvm.tools,
+                            !com.sun.image.codec.jpeg,
+                            !com.sun.image.codec.jpeg.*
+                            org.apache.tika.mime,
                             org.apache.tika.fork,
                             android.util;resolution:=optional,
                             com.adobe.xmp;resolution:=optional,
                             com.adobe.xmp.properties;resolution:=optional,
+                            com.github.luben.zstd;resolution:=optional,
+                            com.github.openjson;resolution:=optional,
                             com.google.protobuf;resolution:=optional,
                             com.ibm.icu.text;resolution:=optional,
+                            com.parso;resolution:=optional,
                             com.sleepycat.je;resolution:=optional,
                             com.sun.javadoc;resolution:=optional,
                             com.sun.xml.bind.marshaller;resolution:=optional,
@@ -261,20 +260,31 @@
                             com.sun.tools.javadoc;resolution:=optional,
                             edu.wisc.ssec.mcidas;resolution:=optional,
                             edu.wisc.ssec.mcidas.adde;resolution:=optional,
+                            edu.usc.irds.agepredictor.spark.authorage;resolution:=optional,
                             javax.activation;resolution:=optional,
                             javax.annotation;resolution:=optional,
                             javax.mail;resolution:=optional,
                             javax.mail.internet;resolution:=optional,
+                            javax.net.ssl;resolution:=optional,
                             javax.servlet.annotation;resolution:=optional,
                             javax.servlet;resolution:=optional,
                             javax.servlet.http;resolution:=optional,
                             javax.measure.converter;resolution:=optional,
                             javax.ws.rs.core;resolution:=optional,
+                            javax.xml.bind;resolution:=optional,
+                            javax.xml.bind.annotation;resolution:=optional,
+                            javax.xml.bind.annotation.adapters;resolution:=optional,
+                            javax.xml.bind.attachment;resolution:=optional,
+                            javax.xml.bind.helpers;resolution:=optional,
+                            javax.xml.bind.util;resolution:=optional,
                             net.sf.ehcache;resolution:=optional,
                             nu.xom;resolution:=optional,
                             opendap.dap.http;resolution:=optional,
                             opendap.dap;resolution:=optional,
                             opendap.dap.parser;resolution:=optional,
+                            opennlp.maxent;resolution:=optional,
+                            opennlp.tools.namefind;resolution:=optional,
+                            opennlp.tools.authorage;resolution:=optional,
                             net.didion.jwnl;resolution:=optional,
                             org.apache.cxf.jaxrs.client;resolution:=optional,
                             org.apache.cxf.jaxrs.ext.multipart;resolution:=optional,
@@ -286,14 +296,22 @@
                             org.apache.commons.httpclient.params;resolution:=optional,
                             org.apache.commons.httpclient.protocol;resolution:=optional,
                             org.apache.commons.httpclient.util;resolution:=optional,
+                            org.apache.commons.math3.exception;resolution:=optional,
+                            org.apache.commons.math3.linear;resolution:=optional,
                             org.apache.commons.vfs2;resolution:=optional,
                             org.apache.commons.vfs2.provider;resolution:=optional,
                             org.apache.commons.vfs2.util;resolution:=optional,
                             org.apache.crimson.jaxp;resolution:=optional,
                             org.apache.jcp.xml.dsig.internal.dom;resolution:=optional,
+                            org.apache.pdfbox.debugger;resolution:=optional,
                             org.apache.sis;resolution:=optional,
                             org.apache.sis.distance;resolution:=optional,
+                            org.apache.sis.feature;resolution:=optional,
                             org.apache.sis.geometry;resolution:=optional,
+                            org.apache.sis.internal.feature;resolution:=optional,
+                            org.apache.sis.internal.referencing;resolution:=optional,
+                            org.apache.sis.parameter;resolution:=optional,
+                            org.apache.sis.referencing;resolution:=optional,
                             org.apache.tools.ant;resolution:=optional,
                             org.apache.tools.ant.taskdefs;resolution:=optional,
                             org.apache.tools.ant.types;resolution:=optional,
@@ -316,6 +334,7 @@
                             org.bouncycastle.operator;resolution:=optional,
                             org.bouncycastle.operator.bc;resolution:=optional,
                             org.bouncycastle.tsp;resolution:=optional,
+                            org.brotli.dec;resolution:=optional,
                             org.cyberneko.html.xercesbridge;resolution:=optional,
                             org.etsi.uri.x01903.v14;resolution:=optional,
                             org.ibex.nestedvm;resolution:=optional,
@@ -333,12 +352,13 @@
                             org.jdom2.output;resolution:=optional,
                             org.jdom2.filter;resolution:=optional,
                             org.json.simple;resolution:=optional,
-                            org.json;resolution:=optional,
                             org.openxmlformats.schemas.officeDocument.x2006.math;resolution:=optional,
                             org.openxmlformats.schemas.schemaLibrary.x2006.main;resolution:=optional,
                             org.osgi.framework;resolution:=optional,
                             org.quartz;resolution:=optional,
                             org.quartz.impl;resolution:=optional,
+                            org.slf4j;resolution:=optional,
+                            org.slf4j.helpers;resolution:=optional,
                             org.sqlite;resolution:=optional,
                             org.w3c.dom;resolution:=optional,
                             org.relaxng.datatype;resolution:=optional,
@@ -435,16 +455,10 @@
                             org.apache.http.message;resolution:=optional,
                             org.apache.http.params;resolution:=optional,
                             org.apache.http.protocol;resolution:=optional,
-                            org.apache.http.util;resolution:=optional
+                            org.apache.http.util;resolution:=optional,
+                            org.apache.commons.logging;resolution:=optional,
+                            *
                         </Import-Package>
-                        <DynamicImport-Package>
-                            org.slf4j.impl,
-                            org.slf4j.bridge,
-                            org.apache.log4j,
-                            org.apache.log4j.*,
-                            org.apache.commons.logging,
-                            org.apache.commons.logging.*
-                        </DynamicImport-Package>
                     </instructions>
                 </configuration>
             </plugin>
