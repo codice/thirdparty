@@ -116,11 +116,12 @@
                         <Import-Package>
                             com.github.mustachejava.*;resolution:="optional",
                             com.mitchellbosecke.pebble.*;resolution:="optional",
-                            freemarker.template.*;resolution:="optional",,
+                            freemarker.template.*;resolution:="optional",
                             org.apache.velocity.*;resolution:="optional",
                             org.commonmark.*;resolution:="optional",
                             org.jtwig.*;resolution:="optional",
                             org.thymeleaf.*;resolution:="optional",
+                            com.fasterxml.jackson.*;resolution:="optional",
                             *
                         </Import-Package>
                     </instructions>
