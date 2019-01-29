@@ -38,6 +38,12 @@
 		    <artifactId>jts-io-common</artifactId>
 		    <version>1.16.0</version>
 		</dependency>
+		<!--vividsolutions 1.14.0 still needed by catalog-opensearch-source-->
+		<dependency>
+			<groupId>com.vividsolutions</groupId>
+			<artifactId>jts-io</artifactId>
+			<version>1.14.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
