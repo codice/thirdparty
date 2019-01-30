@@ -34,6 +34,7 @@
 		<module>ffmpeg</module>
 		<module>tika-bundle</module>
 		<module>cas-client-core-3.5.0</module>
+		<module>javalin</module>
 	</modules>
 
 	<scm>
