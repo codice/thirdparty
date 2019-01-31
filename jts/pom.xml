@@ -21,34 +21,27 @@
 	<version>1.16.0_1</version>
 	<name>Codice :: Thirdparty :: JTS</name>
 	<packaging>bundle</packaging>
+
+	<properties>
+		<bundle.version>1.16.0</bundle.version>
+	</properties>
 	
 	<dependencies>
 		<dependency>
 			<groupId>org.locationtech.jts</groupId>
 			<artifactId>jts-core</artifactId>
-			<version>1.16.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.vividsolutions</groupId>
-			<artifactId>jts-example</artifactId>
-			<version>1.14.0</version>
+			<version>${bundle.version}</version>
 		</dependency>
 		<dependency>
 		    <groupId>org.locationtech.jts.io</groupId>
 		    <artifactId>jts-io-common</artifactId>
-		    <version>1.16.0</version>
+		    <version>${bundle.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.locationtech.jts</groupId>
 			<artifactId>jts-io</artifactId>
-			<version>1.16.0</version>
+			<version>${bundle.version}</version>
 			<type>pom</type>
-		</dependency>
-		<!--vividsolutions 1.14.0 still needed by catalog-opensearch-source-->
-		<dependency>
-			<groupId>com.vividsolutions</groupId>
-			<artifactId>jts-io</artifactId>
-			<version>1.14.0</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -63,49 +56,49 @@
 						<Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Name>${project.name}</Bundle-Name>
 						<Export-Package>
-							com.vividsolutions.jts;version="1.14.0",
-							com.vividsolutions.jts.algorithm;version="1.14.0",
-							com.vividsolutions.jts.algorithm.distance;version="1.14.0",
-							com.vividsolutions.jts.algorithm.locate;version="1.14.0",
-							com.vividsolutions.jts.geom;version="1.14.0",
-							com.vividsolutions.jts.geom.impl;version="1.14.0",
-							com.vividsolutions.jts.geom.prep;version="1.14.0",
-							com.vividsolutions.jts.geom.util;version="1.14.0",
-							com.vividsolutions.jts.geomgraph;version="1.14.0",
-							com.vividsolutions.jts.geomgraph.index;version="1.14.0",
-							com.vividsolutions.jts.index;version="1.14.0",
-							com.vividsolutions.jts.index.bintree;version="1.14.0",
-							com.vividsolutions.jts.index.chain;version="1.14.0",
-							com.vividsolutions.jts.index.intervalrtree;version="1.14.0",
-							com.vividsolutions.jts.index.quadtree;version="1.14.0",
-							com.vividsolutions.jts.index.strtree;version="1.14.0",
-							com.vividsolutions.jts.index.sweepline;version="1.14.0",
-							com.vividsolutions.jts.io;version="1.14.0",
-							com.vividsolutions.jts.io.geojson;version="1.14.0",
-							com.vividsolutions.jts.io.kml;version="1.14.0",
-							com.vividsolutions.jts.io.gml2;version="1.14.0",
-							com.vividsolutions.jts.linearref;version="1.14.0",
-							com.vividsolutions.jts.math;version="1.14.0",
-							com.vividsolutions.jts.noding;version="1.14.0",
-							com.vividsolutions.jts.noding.snapround;version="1.14.0",
-							com.vividsolutions.jts.operation;version="1.14.0",
-							com.vividsolutions.jts.operation.buffer;version="1.14.0",
-							com.vividsolutions.jts.operation.buffer.validate;version="1.14.0",
-							com.vividsolutions.jts.operation.distance;version="1.14.0",
-							com.vividsolutions.jts.operation.linemerge;version="1.14.0",
-							com.vividsolutions.jts.operation.overlay;version="1.14.0",
-							com.vividsolutions.jts.operation.overlay.snap;version="1.14.0",
-							com.vividsolutions.jts.operation.overlay.validate;version="1.14.0",
-							com.vividsolutions.jts.operation.polygonize;version="1.14.0",
-							com.vividsolutions.jts.operation.predicate;version="1.14.0",
-							com.vividsolutions.jts.operation.relate;version="1.14.0",
-							com.vividsolutions.jts.operation.union;version="1.14.0",
-							com.vividsolutions.jts.operation.valid;version="1.14.0",
-							com.vividsolutions.jts.planargraph;version="1.14.0",
-							com.vividsolutions.jts.planargraph.algorithm;version="1.14.0",
-							com.vividsolutions.jts.precision;version="1.14.0",
-							com.vividsolutions.jts.simplify;version="1.14.0",
-							com.vividsolutions.jts.util;version="1.14.0"
+							org.locationtech.jts;version="${bundle.version}",
+							org.locationtech.jts.algorithm;version="${bundle.version}",
+							org.locationtech.jts.algorithm.distance;version="${bundle.version}",
+							org.locationtech.jts.algorithm.locate;version="${bundle.version}",
+							org.locationtech.jts.geom;version="${bundle.version}",
+							org.locationtech.jts.geom.impl;version="${bundle.version}",
+							org.locationtech.jts.geom.prep;version="${bundle.version}",
+							org.locationtech.jts.geom.util;version="${bundle.version}",
+							org.locationtech.jts.geomgraph;version="${bundle.version}",
+							org.locationtech.jts.geomgraph.index;version="${bundle.version}",
+							org.locationtech.jts.index;version="${bundle.version}",
+							org.locationtech.jts.index.bintree;version="${bundle.version}",
+							org.locationtech.jts.index.chain;version="${bundle.version}",
+							org.locationtech.jts.index.intervalrtree;version="${bundle.version}",
+							org.locationtech.jts.index.quadtree;version="${bundle.version}",
+							org.locationtech.jts.index.strtree;version="${bundle.version}",
+							org.locationtech.jts.index.sweepline;version="${bundle.version}",
+							org.locationtech.jts.io;version="${bundle.version}",
+							org.locationtech.jts.io.geojson;version="${bundle.version}",
+							org.locationtech.jts.io.kml;version="${bundle.version}",
+							org.locationtech.jts.io.gml2;version="${bundle.version}",
+							org.locationtech.jts.linearref;version="${bundle.version}",
+							org.locationtech.jts.math;version="${bundle.version}",
+							org.locationtech.jts.noding;version="${bundle.version}",
+							org.locationtech.jts.noding.snapround;version="${bundle.version}",
+							org.locationtech.jts.operation;version="${bundle.version}",
+							org.locationtech.jts.operation.buffer;version="${bundle.version}",
+							org.locationtech.jts.operation.buffer.validate;version="${bundle.version}",
+							org.locationtech.jts.operation.distance;version="${bundle.version}",
+							org.locationtech.jts.operation.linemerge;version="${bundle.version}",
+							org.locationtech.jts.operation.overlay;version="${bundle.version}",
+							org.locationtech.jts.operation.overlay.snap;version="${bundle.version}",
+							org.locationtech.jts.operation.overlay.validate;version="${bundle.version}",
+							org.locationtech.jts.operation.polygonize;version="${bundle.version}",
+							org.locationtech.jts.operation.predicate;version="${bundle.version}",
+							org.locationtech.jts.operation.relate;version="${bundle.version}",
+							org.locationtech.jts.operation.union;version="${bundle.version}",
+							org.locationtech.jts.operation.valid;version="${bundle.version}",
+							org.locationtech.jts.planargraph;version="${bundle.version}",
+							org.locationtech.jts.planargraph.algorithm;version="${bundle.version}",
+							org.locationtech.jts.precision;version="${bundle.version}",
+							org.locationtech.jts.simplify;version="${bundle.version}",
+							org.locationtech.jts.util;version="${bundle.version}"
 						</Export-Package>
 					</instructions>
 				</configuration>
