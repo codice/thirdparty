@@ -17,13 +17,13 @@
 
 	<groupId>org.codice.thirdparty</groupId>
 	<artifactId>gt-opengis</artifactId>
-	<version>19.1_1</version>
+	<version>20.1_1</version>
 	<name>Codice :: Thirdparty :: Geotools OpenGIS API</name>
 
 	<packaging>bundle</packaging>
 
 	<properties>
-		<bundle.version>19.1</bundle.version>
+		<bundle.version>20.1</bundle.version>
 		<jsr.275.version>1.0-beta-2</jsr.275.version>
 	</properties>
 	
