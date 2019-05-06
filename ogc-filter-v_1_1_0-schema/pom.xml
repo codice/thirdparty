@@ -23,26 +23,27 @@
   <description>Provides JAXB 2.x bindings for OGC Filter Schema (Version 1.1.0).</description>
 
   <properties>
-    <jaxb.plugin.version>0.8.0</jaxb.plugin.version>
+    <jaxb.plugin.version>0.14.0</jaxb.plugin.version>
+    <jvnet.jaxb.version>1.11.1</jvnet.jaxb.version>
   </properties>
   
   <dependencies>
     <dependency>
       <groupId>org.jvnet.jaxb2_commons</groupId>
       <artifactId>jaxb2-basics-runtime</artifactId>
-      <version>0.9.4</version>
+      <version>${jvnet.jaxb.version}</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
       <groupId>com.sun.xml.bind</groupId>
       <artifactId>jaxb-impl</artifactId>
-      <version>2.1.13</version>
+      <version>2.3.2</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>org.jvnet.ogc</groupId>
-      <artifactId>gml-v_3_1_1-schema</artifactId>
-      <version>1.1.0</version>
+      <artifactId>gml-v_3_1_1</artifactId>
+      <version>2.6.1</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
@@ -80,7 +81,7 @@
               <episodes>
                 <episode>
                   <groupId>org.jvnet.ogc</groupId>
-                  <artifactId>gml-v_3_1_1-schema</artifactId>
+                  <artifactId>gml-v_3_1_1</artifactId>
                 </episode>
               </episodes>
               <strict>false</strict>
@@ -100,7 +101,7 @@
                 <plugin>
                   <groupId>org.jvnet.jaxb2_commons</groupId>
                   <artifactId>jaxb2-basics</artifactId>
-                  <version>0.9.4</version>
+                  <version>${jvnet.jaxb.version}</version>
                 </plugin>
               </plugins>
             </configuration>
