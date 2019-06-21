@@ -21,7 +21,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.codice.thirdparty</groupId>
     <artifactId>tika-bundle</artifactId>
-    <version>1.18.0_4</version>
+    <version>1.18.0_5</version>
 
     <name>Codice :: Thirdparty :: Apache Tika OSGi Bundle</name>
     <packaging>bundle</packaging>
@@ -80,6 +80,11 @@
                     <!-- excluding openlp due to CVE-2017-12620 https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-12620 -->
                     <groupId>org.apache.opennlp</groupId>
                     <artifactId>opennlp-tools</artifactId>
+                </exclusion>
+                <exclusion>
+                    <!-- excluding bzip2 due to CVE-2019-12900 https://nvd.nist.gov/vuln/detail/CVE-2019-12900 -->
+                    <groupId>org.itadaki</groupId>
+                    <artifactId>bzip2</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
