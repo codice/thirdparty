@@ -18,7 +18,7 @@
 
     <groupId>org.codice.thirdparty</groupId>
     <artifactId>javalin</artifactId>
-    <version>2.5.0_1</version>
+    <version>3.1.0_1</version>
     <name>Codice :: Thirdparty :: Javalin</name>
     <packaging>bundle</packaging>
 
@@ -30,7 +30,7 @@
         <dependency>
             <groupId>io.javalin</groupId>
             <artifactId>javalin</artifactId>
-            <version>2.5.0</version>
+            <version>3.1.0</version>
         </dependency>
 
         <!-- Optional Dependencies -->
@@ -100,28 +100,30 @@
                         <Export-Package>
                             io.javalin,
                             io.javalin.apibuilder,
-                            io.javalin.cookie,
                             io.javalin.core,
-                            io.javalin.core.util,
-                            io.javalin.json,
-                            io.javalin.rendering,
-                            io.javalin.security,
-                            io.javalin.staticfiles,
-                            io.javalin.validation,
+                            io.javalin.core.event,
+                            io.javalin.http,
+                            io.javalin.plugin.json,
+                            io.javalin.plugin.metrics,
+                            io.javalin.plugin.openapi,
+                            io.javalin.plugin.rendering,
                             io.javalin.websocket
                         </Export-Package>
                         <Private-Package>
                             io.javalin.*
                         </Private-Package>
                         <Import-Package>
-                            com.github.mustachejava.*;resolution:="optional",
-                            com.mitchellbosecke.pebble.*;resolution:="optional",
-                            freemarker.template.*;resolution:="optional",
-                            org.apache.velocity.*;resolution:="optional",
-                            org.commonmark.*;resolution:="optional",
-                            org.jtwig.*;resolution:="optional",
-                            org.thymeleaf.*;resolution:="optional",
-                            com.fasterxml.jackson.*;resolution:="optional",
+                            com.github.mustachejava.*;resolution:=optional,
+                            com.mitchellbosecke.pebble.*;resolution:=optional,
+                            freemarker.template.*;resolution:=optional,
+                            org.apache.velocity.*;resolution:=optional,
+                            org.commonmark.*;resolution:=optional,
+                            org.jtwig.*;resolution:=optional,
+                            org.thymeleaf.*;resolution:=optional,
+                            com.fasterxml.jackson.*;resolution:=optional,
+                            io.github.classgraph;resolution:=optional,
+                            io.micrometer.*;resolution:=optional,
+                            io.swagger.*;resolution:=optional,
                             *
                         </Import-Package>
                     </instructions>
