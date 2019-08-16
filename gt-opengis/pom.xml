@@ -17,14 +17,14 @@
 
 	<groupId>org.codice.thirdparty</groupId>
 	<artifactId>gt-opengis</artifactId>
-	<version>20.1_1</version>
+	<version>20.1_2</version>
 	<name>Codice :: Thirdparty :: Geotools OpenGIS API</name>
 
 	<packaging>bundle</packaging>
 
 	<properties>
 		<bundle.version>20.1</bundle.version>
-		<jsr.275.version>1.0-beta-2</jsr.275.version>
+		<jsr.275.version>1.0</jsr.275.version>
 	</properties>
 	
 	<dependencies>
@@ -32,6 +32,11 @@
 			<groupId>org.geotools</groupId>
 			<artifactId>gt-opengis</artifactId>
 			<version>${bundle.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>systems.uom</groupId>
+			<artifactId>systems-common-java8</artifactId>
+			<version>0.7.2</version>
 		</dependency>
 	</dependencies>
 	
