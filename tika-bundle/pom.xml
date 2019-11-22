@@ -174,7 +174,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.0.0</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -271,14 +271,11 @@
                             !org.apache.uima.*,
                             *,
                             org.slf4j,
-                            org.apache.tika,
                             org.apache.tika.fork,
-                            org.apache.poi.*,
                             android.util;resolution:=optional,
                             com.adobe.xmp;resolution:=optional,
                             com.adobe.xmp.properties;resolution:=optional,
                             com.google.protobuf;resolution:=optional,
-                            com.google.common.*,
                             com.ibm.icu.text;resolution:=optional,
                             com.sleepycat.je;resolution:=optional,
                             com.sun.javadoc;resolution:=optional,
