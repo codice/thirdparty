@@ -34,7 +34,7 @@
     </description>
 
     <properties>
-        <tika.version>1.18</tika.version>
+        <tika.version>1.22</tika.version>
     </properties>
 
     <repositories>
