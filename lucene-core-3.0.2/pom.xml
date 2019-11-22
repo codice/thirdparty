@@ -22,7 +22,7 @@
 	<packaging>bundle</packaging>
 
 	<properties>
-		<lucene.version>3.0.2</lucene.version>
+		<lucene.version>7.1.0</lucene.version>
 	</properties>
 
 	<dependencies>
