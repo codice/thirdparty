@@ -167,6 +167,11 @@
             <artifactId>gt-opengis</artifactId>
             <version>19.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.googlecode.mp4parser</groupId>
+            <artifactId>isoparser</artifactId>
+            <version>1.1.22</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -271,7 +276,6 @@
                             !org.apache.uima.*,
                             *,
                             org.apache.tika.fork,
-                            android.util;resolution:=optional,
                             com.adobe.xmp;resolution:=optional,
                             com.adobe.xmp.properties;resolution:=optional,
                             com.google.protobuf;resolution:=optional,
@@ -349,21 +353,14 @@
                             org.openxmlformats.schemas.schemaLibrary.x2006.main;resolution:=optional,
                             org.quartz;resolution:=optional,
                             org.quartz.impl;resolution:=optional,
-                            org.w3c.dom;resolution:=optional,
                             org.relaxng.datatype;resolution:=optional,
-                            org.xml.sax;resolution:=optional,
                             org.xml.sax.ext;resolution:=optional,
-                            org.xml.sax.helpers;resolution:=optional,
                             org.xmlpull.v1;resolution:=optional,
                             com.microsoft.schemas.office.powerpoint;resolution:=optional,
                             com.microsoft.schemas.office.word;resolution:=optional,
-                            sun.misc;resolution:=optional,
                             ucar.units;resolution:=optional,
                             ucar.httpservices;resolution:=optional,
-                            ucar.nc2.util;resolution:=optional,
                             ucar.nc2.util.cache;resolution:=optional,
-                            ucar.nc2.dataset;resolution:=optional,
-                            ucar.nc2;resolution:=optional,
                             ucar.nc2.constants;resolution:=optional,
                             ucar.nc2.dt;resolution:=optional,
                             ucar.nc2.dt.grid;resolution:=optional,
@@ -376,7 +373,6 @@
                             ucar.nc2.units;resolution:=optional,
                             ucar.nc2.wmo;resolution:=optional,
                             ucar.nc2.write;resolution:=optional,
-                            ucar.ma2;resolution:=optional,
                             ucar.grib;resolution:=optional,
                             ucar.grib.grib1;resolution:=optional,
                             ucar.grib.grib2;resolution:=optional,
@@ -387,8 +383,6 @@
                             ucar.unidata.geoloc.projection.sat;resolution:=optional,
                             ucar.unidata.io;resolution:=optional,
                             ucar.unidata.util;resolution:=optional,
-                            com.jmatio.io;resolution:=optional,
-                            com.google.gson;resolution:=optional,
                             com.google.gson.reflect;resolution:=optional,
                             visad;resolution:=optional,
                             visad.data;resolution:=optional,
@@ -424,27 +418,21 @@
                             com.beust.jcommander;resolution:=optional,
                             com.google.common.base;resolution:=optional,
                             com.google.common.math;resolution:=optional,
-                            org.apache.http;resolution:=optional,
-                            org.apache.http.client.utils;resolution:=optional,
                             org.joda.time;resolution:=optional,
                             org.joda.time.chrono;resolution:=optional,
                             org.joda.time.field;resolution:=optional,
                             org.joda.time.format;resolution:=optional,
                             sun.reflect.generics.reflectiveObjects;resolution:=optional,
                             org.apache.http.auth;resolution:=optional,
-                            org.apache.http.client;resolution:=optional,
                             org.apache.http.client.entity;resolution:=optional,
-                            org.apache.http.client.methods;resolution:=optional,
                             org.apache.http.conn;resolution:=optional,
                             org.apache.http.conn.scheme;resolution:=optional,
                             org.apache.http.cookie;resolution:=optional,
-                            org.apache.http.entity;resolution:=optional,
-                            org.apache.http.impl.client;resolution:=optional,
                             org.apache.http.impl.conn;resolution:=optional,
                             org.apache.http.message;resolution:=optional,
                             org.apache.http.params;resolution:=optional,
                             org.apache.http.protocol;resolution:=optional,
-                            org.apache.http.util;resolution:=optional
+                            com.coremedia.iso;resolution=optional
                         </Import-Package>
                         <DynamicImport-Package>
                             org.slf4j.impl,
