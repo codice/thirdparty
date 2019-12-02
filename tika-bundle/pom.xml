@@ -36,6 +36,7 @@
     <properties>
         <tika.version>1.18</tika.version>
         <jackson.version>2.9.10</jackson.version>
+        <jackson.databind.version>2.9.10.1</jackson.databind.version>
     </properties>
 
     <repositories>
@@ -154,7 +155,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson.version}</version>
+            <version>${jackson.databind.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
