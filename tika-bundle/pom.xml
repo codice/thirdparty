@@ -110,6 +110,11 @@
             <artifactId>openjson</artifactId>
             <version>1.0.10</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.jai-imageio</groupId>
+            <artifactId>jai-imageio-core</artifactId>
+            <version>1.4.0</version>
+        </dependency>
         <!-- order matters here, don't move these two around -->
         <dependency>
             <groupId>javax.measure</groupId>
@@ -168,9 +173,236 @@
             <version>19.1</version>
         </dependency>
         <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+        <dependency>
             <groupId>com.googlecode.mp4parser</groupId>
             <artifactId>isoparser</artifactId>
             <version>1.1.22</version>
+        </dependency>
+        <dependency>
+            <groupId>com.drewnoakes</groupId>
+            <artifactId>metadata-extractor</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.adobe.xmp</groupId>
+            <artifactId>xmpcore</artifactId>
+            <version>6.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.junrar</groupId>
+            <artifactId>junrar</artifactId>
+            <version>4.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.1-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>failureaccess</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.errorprone</groupId>
+            <artifactId>error_prone_annotations</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.healthmarketscience.jackcess</groupId>
+            <artifactId>jackcess</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.diffplug.matsim</groupId>
+            <artifactId>matfilerw</artifactId>
+            <version>3.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.pff</groupId>
+            <artifactId>java-libpst</artifactId>
+            <version>0.9.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.rometools</groupId>
+            <artifactId>rome</artifactId>
+            <version>1.12.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.rometools</groupId>
+            <artifactId>rome-utils</artifactId>
+            <version>1.12.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codelibs</groupId>
+            <artifactId>jhighlight</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>de.l3s.boilerpipe</groupId>
+            <artifactId>boilerpipe</artifactId>
+            <version>1.1.0</version>
+            <scope>provided</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>*</artifactId>
+                    <groupId>*</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.13</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-exec</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>fontbox</artifactId>
+            <version>2.0.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.james</groupId>
+            <artifactId>apache-mime4j-core</artifactId>
+            <version>0.8.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.james</groupId>
+            <artifactId>apache-mime4j-dom</artifactId>
+            <version>0.8.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>jempbox</artifactId>
+            <version>1.8.16</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.virtuald</groupId>
+            <artifactId>curvesapi</artifactId>
+            <version>1.06</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>2.3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sis.core</groupId>
+            <artifactId>sis-utility</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sis.storage</groupId>
+            <artifactId>sis-netcdf</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sis.core</groupId>
+            <artifactId>sis-metadata</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sis.storage</groupId>
+            <artifactId>sis-storage</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sis.core</groupId>
+            <artifactId>sis-feature</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sis.core</groupId>
+            <artifactId>sis-referencing</artifactId>
+            <version>0.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.saxon</groupId>
+            <artifactId>Saxon-HE</artifactId>
+            <version>9.9.1-5</version>
+        </dependency>
+        <dependency>
+            <groupId>xml-resolver</groupId>
+            <artifactId>xml-resolver</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ccil.cowan.tagsoup</groupId>
+            <artifactId>tagsoup</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.googlecode.json-simple</groupId>
+            <artifactId>json-simple</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.albfernandez</groupId>
+            <artifactId>juniversalchardet</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>7.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.opengis</groupId>
+            <artifactId>geoapi</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>1.9.76</version>
         </dependency>
     </dependencies>
 
@@ -276,14 +508,9 @@
                             !org.apache.uima.*,
                             !android.util,
                             !colorspace,
-                            !com.apple.eawt,
                             !com.beust.jcommander,
                             !com.epam.parso,
                             !com.epam.parso.impl,
-                            !com.github.jaiimageio.impl.plugins.tiff,
-                            !com.github.jaiimageio.jpeg2000.impl,
-                            !com.google.appengine.api,
-                            !com.google.apphosting.api,
                             !com.google.common.util.concurrent.internal,
                             !com.google.errorprone.annotations,
                             !com.google.errorprone.annotations.concurrent,
@@ -360,11 +587,49 @@
                             !org.apache.xml.security.c14n,
                             !org.apache.xml.security.signature,
                             !org.apache.xml.security.utils,
+                            !org.checkerframework.checker.nullness.qual,
+                            !org.cyberneko.html.xercesbridge,
+                            !org.itadaki.bzip2,
+                            !org.jdom2,
+                            !org.jdom2.input,
+                            !org.jdom2.input.sax,
+                            !org.jdom2.output,
+                            !org.jdom2.filter,
+                            !org.joda.time,
+                            !org.joda.time.chrono,
+                            !org.joda.time.field,
+                            !org.joda.time.format,
+                            !org.jsoup,
+                            !org.jsoup.nodes,
+                            !org.jsoup.select,
+                            !org.quartz,
+                            !org.quartz.impl,
+                            !org.sqlite,
+                            !sun.java2d.cmm.kcms,
+                            !sun.reflect.generics.reflectiveObjects,
+                            !ucar.units,
+                            !ucar.nc2.util,
+                            !ucar.nc2.dataset,
+                            !ucar.nc2,
+                            !com.adobe.xmp,
+                            !com.adobe.xmp.impl,
+                            !com.adobe.xmp.options,
+                            !com.adobe.xmp.properties,
+                            !com.apple.eawt,
+                            !net.sf.saxon,
+                            !net.sf.saxon.dom,
+                            !net.sf.saxon.om,
+                            !net.sf.saxon.query,
+                            !net.sf.saxon.sxpath,
+                            !net.sf.saxon.value,
+                            !com.github.jaiimageio.impl.plugins.tiff,
+                            !com.github.jaiimageio.jpeg2000.impl,
+                            !com.google.appengine.api,
+                            !com.google.apphosting.api,
+                            !com.google.common.util.concurrent.internal,
                             *,
                             org.apache.tika.fork,
                             android.util;resolution:=optional,
-                            com.adobe.xmp;resolution:=optional,
-                            com.adobe.xmp.properties;resolution:=optional,
                             com.ibm.icu.text;resolution:=optional,
                             com.sleepycat.je;resolution:=optional,
                             com.sun.msv.datatype;resolution:=optional,
@@ -414,6 +679,7 @@
                             org.bouncycastle.cert.ocsp;resolution:=optional,
                             org.bouncycastle.cms.bc;resolution:=optional,
                             org.bouncycastle.operator.bc;resolution:=optional,
+                            org.cyberneko.html.xercesbridge;resolution:=optional,
                             org.etsi.uri.x01903.v14;resolution:=optional,
                             org.ibex.nestedvm;resolution:=optional,
                             org.gjt.xpp;resolution:=optional,
@@ -421,15 +687,27 @@
                             org.jaxen.dom4j;resolution:=optional,
                             org.jaxen.pattern;resolution:=optional,
                             org.jaxen.saxpath;resolution:=optional,
+                            org.jdom2;resolution:=optional,
+                            org.jdom2.input;resolution:=optional,
+                            org.jdom2.input.sax;resolution:=optional,
+                            org.jdom2.output;resolution:=optional,
+                            org.jdom2.filter;resolution:=optional,
                             org.json;resolution:=optional,
                             org.openxmlformats.schemas.officeDocument.x2006.math;resolution:=optional,
                             org.openxmlformats.schemas.schemaLibrary.x2006.main;resolution:=optional,
+                            org.quartz;resolution:=optional,
+                            org.quartz.impl;resolution:=optional,
+                            org.sqlite;resolution:=optional,
                             org.relaxng.datatype;resolution:=optional,
                             org.xmlpull.v1;resolution:=optional,
                             com.microsoft.schemas.office.powerpoint;resolution:=optional,
                             com.microsoft.schemas.office.word;resolution:=optional,
+                            ucar.units;resolution:=optional,
                             ucar.httpservices;resolution:=optional,
+                            ucar.nc2.util;resolution:=optional,
                             ucar.nc2.util.cache;resolution:=optional,
+                            ucar.nc2.dataset;resolution:=optional,
+                            ucar.nc2;resolution:=optional,
                             ucar.nc2.constants;resolution:=optional,
                             ucar.nc2.dt;resolution:=optional,
                             ucar.nc2.dt.grid;resolution:=optional,
@@ -475,15 +753,25 @@
                             jj2000.j2k.roi;resolution:=optional,
                             jj2000.j2k.util;resolution:=optional,
                             jj2000.j2k.wavelet.synthesis;resolution:=optional,
+                            org.itadaki.bzip2;resolution:=optional,
+                            org.jsoup;resolution:=optional,
+                            org.jsoup.nodes;resolution:=optional,
+                            org.jsoup.select;resolution:=optional,
                             thredds.featurecollection;resolution:=optional,
                             thredds.filesystem;resolution:=optional,
                             thredds.inventory;resolution:=optional,
                             thredds.inventory.filter;resolution:=optional,
                             thredds.inventory.partition;resolution:=optional,
+                            com.beust.jcommander;resolution:=optional,
                             com.google.common.base;resolution:=optional,
                             com.google.common.math;resolution:=optional,
                             org.apache.http;resolution:=optional,
                             org.apache.http.client.utils;resolution:=optional,
+                            org.joda.time;resolution:=optional,
+                            org.joda.time.chrono;resolution:=optional,
+                            org.joda.time.field;resolution:=optional,
+                            org.joda.time.format;resolution:=optional,
+                            sun.reflect.generics.reflectiveObjects;resolution:=optional,
                             org.apache.http.auth;resolution:=optional,
                             org.apache.http.client;resolution:=optional,
                             org.apache.http.client.entity;resolution:=optional,
@@ -498,22 +786,7 @@
                             org.apache.http.params;resolution:=optional,
                             org.apache.http.protocol;resolution:=optional,
                             org.apache.http.util;resolution:=optional,
-                            com.coremedia.iso;resolution=optional,
-                            com.apple.eawt;resolution=optional,
-                            com.beust.jcommander;resolution=optional,
-                            com.epam.parso;resolution=optional,
-                            com.epam.parso.impl;resolution=optional,
-                            com.github.jaiimageio.impl.plugins.tiff;resolution=optional,
-                            com.github.jaiimageio.jpeg2000.impl;resolution=optional,
-                            com.google.appengine.api;resolution=optional,
-                            com.google.apphosting.api;resolution=optional,
-                            com.google.common.util.concurrent.internal;resolution=optional,
-                            com.google.errorprone.annotations;resolution=optional,
-                            com.google.errorprone.annotations.concurrent;resolution=optional,
-                            com.google.gson;resolution=optional,
-                            com.google.protobuf;resolution=optional,
-                            com.sun.javadoc;resolution=optional,
-                            com.sun.tools.javadoc;resolution=optional,
+                            com.coremedia.iso;resolution:=optional,
                             com.sun.xml.bind.marshaller;resolution=optional,
                             com.sun.xml.internal.bind.marshaller;resolution=optional,
                             com.vividsolutions.jts.geom;resolution=optional,
@@ -524,6 +797,29 @@
                             org.apache.commons.math3.linear;resolution=optional,
                             org.apache.commons.math3.stat.regression;resolution=optional,
                             org.checkerframework.checker.nullness.qual;resolution=optional,
+                            sun.java2d.cmm.kcms;resolution=optional,
+                            com.adobe.xmp;resolution=optional,
+                            com.adobe.xmp.impl;resolution=optional,
+                            com.adobe.xmp.options;resolution=optional,
+                            com.adobe.xmp.properties;resolution=optional,
+                            com.apple.eawt;resolution=optional,
+                            net.sf.saxon;resolution=optional,
+                            net.sf.saxon.dom;resolution=optional,
+                            net.sf.saxon.om;resolution=optional,
+                            net.sf.saxon.query;resolution=optional,
+                            net.sf.saxon.sxpath;resolution=optional,
+                            net.sf.saxon.value;resolution=optional,
+                            com.epam.parso;resolution=optional,
+                            com.epam.parso.impl;resolution=optional,
+                            com.github.jaiimageio.impl.plugins.tiff;resolution=optional,
+                            com.github.jaiimageio.jpeg2000.impl;resolution=optional,
+                            com.google.appengine.api;resolution=optional,
+                            com.google.apphosting.api;resolution=optional,
+                            com.google.common.util.concurrent.internal;resolution=optional,
+                            com.google.gson;resolution=optional,
+                            com.google.protobuf;resolution=optional,
+                            com.sun.javadoc;resolution=optional,
+                            com.sun.tools.javadoc;resolution=optional,
                         </Import-Package>
                         <DynamicImport-Package>
                             org.slf4j.impl,
