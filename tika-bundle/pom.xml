@@ -312,7 +312,7 @@
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
             <artifactId>jaxb-impl</artifactId>
-            <version>2.0.1</version>
+            <version>2.3.2</version>
         </dependency>
         <dependency>
             <groupId>com.sun.xml.bind</groupId>
@@ -520,7 +520,6 @@
                             !com.sun.jna,
                             !com.sun.jna.ptr,
                             !com.sun.tools.javadoc,
-                            !com.sun.xml.bind.marshaller,
                             !com.sun.xml.internal.bind.marshaller,
                             !com.vividsolutions.jts.geom,
                             !edu.mit.ll.mitie,
@@ -787,7 +786,6 @@
                             org.apache.http.protocol;resolution:=optional,
                             org.apache.http.util;resolution:=optional,
                             com.coremedia.iso;resolution:=optional,
-                            com.sun.xml.bind.marshaller;resolution=optional,
                             com.sun.xml.internal.bind.marshaller;resolution=optional,
                             com.vividsolutions.jts.geom;resolution=optional,
                             edu.mit.ll.mitie;resolution=optional,
