@@ -17,14 +17,13 @@
 
 	<groupId>org.codice.thirdparty</groupId>
 	<artifactId>gt-opengis</artifactId>
-	<version>20.1_2</version>
+	<version>20.1_3</version>
 	<name>Codice :: Thirdparty :: Geotools OpenGIS API</name>
 
 	<packaging>bundle</packaging>
 
 	<properties>
 		<bundle.version>20.1</bundle.version>
-		<jsr.275.version>1.0</jsr.275.version>
 	</properties>
 	
 	<dependencies>
@@ -53,7 +52,7 @@
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<version>3.5.0</version>
+				<version>4.2.1</version>
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
@@ -64,7 +63,7 @@
 						
 						<!-- This is to embed transitive jars and protect this bundle's classpath -->
 						<Embed-Dependency>
-							*;artifactId=!gt-opengis|vecmath|jsr-275
+							*;artifactId=!gt-opengis|vecmath|jsr-275|unit-api
 						</Embed-Dependency>
 
 						<Embed-Transitive>true</Embed-Transitive>
@@ -108,10 +107,7 @@
 							org.opengis.referencing.operation;version="${bundle.version}",
 							org.opengis.style;version="${bundle.version}",
 							org.opengis.temporal;version="${bundle.version}",
-							org.opengis.util;version="${bundle.version}",
-
-							<!-- jsr-275 -->
-							javax.measure.*;version="${jsr.275.version}",
+							org.opengis.util;version="${bundle.version}"
 
 						</Private-Package>
 						<Export-Package>
@@ -154,10 +150,7 @@
 							org.opengis.referencing.operation;version="${bundle.version}",
 							org.opengis.style;version="${bundle.version}",
 							org.opengis.temporal;version="${bundle.version}",
-							org.opengis.util;version="${bundle.version}",
-							
-							<!-- jsr-275 -->
-							javax.measure.*;version="${jsr.275.version}",
+							org.opengis.util;version="${bundle.version}"
 							
 						</Export-Package>
 						<Import-Package>*;resolution:=optional</Import-Package>
