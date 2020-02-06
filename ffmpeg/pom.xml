@@ -8,13 +8,12 @@
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>org.codice.thirdparty</groupId>
     <artifactId>ffmpeg</artifactId>
-    <version>4.0_2</version>
+    <version>4.2.2_1</version>
     <name>Codice :: Thirdparty :: FFmpeg Binaries</name>
-    <description>Provides 32-bit LGPL Linux, Mac, and Windows FFmpeg binaries (FFmpeg
-        version 4.0). Solaris is still on version 3.1.1.
+    <description>Provides 32-bit LGPL Linux, Windows, and 64-bit Mac FFmpeg binaries (FFmpeg
+        version 4.2.2). 
     </description>
     <packaging>pom</packaging>
 

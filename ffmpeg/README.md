@@ -101,16 +101,15 @@ If your host machine is Windows, you may have to [disable Hyper-V](https://www.p
 1. Configure the source & make by running
 
     ```
-    ./configure --extra-cflags="-arch i386 -static" \
-    --extra-ldflags="-arch i386 -static" \
-    --arch=x86_32 \
-    --target-os=darwin \
-    --enable-cross-compile \
-    --pkg-config-flags="--static" \
-    --disable-shared \
-    --enable-static \
-    --enable-version3 && \
-    make
+      ./configure \
+     --arch=x86_64 \
+     --target-os=darwin \
+     --enable-cross-compile \
+     --pkg-config-flags="--static" \
+     --disable-shared \
+     --enable-static \
+     --enable-version3 && \
+     make
     ```
 
 1. The root directory of the cloned ffmpeg repo will now have the desired binary `ffmpeg`.
