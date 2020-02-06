@@ -17,7 +17,7 @@
 
 	<groupId>org.codice.thirdparty</groupId>
 	<artifactId>geotools-suite</artifactId>
-	<version>20.1_1</version>
+	<version>20.1_2</version>
 	<name>Codice :: Thirdparty :: Geotools Suite</name>
 
 	<packaging>bundle</packaging>
@@ -116,6 +116,37 @@
 			<artifactId>commons-collections</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>si.uom</groupId>
+			<artifactId>si-quantity</artifactId>
+			<version>0.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>tec.uom.lib</groupId>
+			<artifactId>uom-lib-common</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>tec.uom</groupId>
+			<artifactId>uom-se</artifactId>
+			<version>1.0.8</version>
+		</dependency>
+		<dependency>
+			<groupId>systems.uom</groupId>
+			<artifactId>systems-quantity</artifactId>
+			<version>0.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>systems.uom</groupId>
+			<artifactId>systems-common-java8</artifactId>
+			<version>0.7.2</version>
+		</dependency>
+		<dependency>
+			<groupId>si.uom</groupId>
+			<artifactId>si-units-java8</artifactId>
+			<version>0.7.1</version>
+		</dependency>
+
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
@@ -140,12 +171,12 @@
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
-				<version>3.5.0</version>
+				<version>4.2.1</version>
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
 						<Embed-Dependency>
-							*;scope=compile|runtime;artifactId=!jts|gt-geojson|gt-opengis|jsr-275|geoapi|geoapi-pending|xml-apis|log4j|xercesImpl|xml-apis-xerces|org.osgi.*
+							*;scope=compile|runtime;artifactId=!jts|unit-api|uom-se|uom-lib-common|systems-quantity|systems-common-java8|si-units-java8|si-quantity|gt-geojson|gt-opengis|jsr-275|geoapi|geoapi-pending|xml-apis|log4j|xercesImpl|xml-apis-xerces|org.osgi.*
 						</Embed-Dependency>
 						<Embed-Transitive>true</Embed-Transitive>
 						<Bundle-SymbolicName>
@@ -155,306 +186,369 @@
 						<Private-Package>
 							<!-- gt-main -->
 							org.geotools.data;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.data.collection;version=${bundle.version},
-							org.geotools.data.crs;version=${bundle.version},
+							org.geotools.data.collection;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.crs;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.data.memory;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.data.ows;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.data.simple;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.data.sort;version=${bundle.version},
+							org.geotools.data.sort;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.data.store;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.data.view;version=${bundle.version},
+							org.geotools.data.view;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.factory;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.feature;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.feature.collection;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.feature.simple;version=${bundle.version},
-							org.geotools.feature.type;version=${bundle.version},
-							org.geotools.feature.visitor;version=${bundle.version},
+							org.geotools.feature.simple;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.feature.type;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.feature.visitor;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.filter;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.filter.capability;version=${bundle.version},
+							org.geotools.filter.capability;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.filter.expression;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.filter.function;version=${bundle.version},
-							org.geotools.filter.function.math;version=${bundle.version},
-							org.geotools.filter.function.string;version=${bundle.version},
-							org.geotools.filter.identity;version=${bundle.version},
-							org.geotools.filter.spatial;version=${bundle.version},
-							org.geotools.filter.temporal;version=${bundle.version},
-							org.geotools.filter.visitor;version=${bundle.version},
+							org.geotools.filter.function;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.function.math;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.function.string;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.identity;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.spatial;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.temporal;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.visitor;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.geometry;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.geometry.coordinatesequence;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.geometry.jts;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.geometry.jts.coordinatesequence;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.geometry.text;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.gml;version=${bundle.version},
-							org.geotools.gml.producer;version=${bundle.version},
+							org.geotools.gml;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml.producer;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.ows;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.renderer;version=${bundle.version},
+							org.geotools.renderer;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.styling;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.styling.visitor;version=${bundle.version},
-							org.geotools.temporal;version=${bundle.version},
-							org.geotools.temporal.object;version=${bundle.version},
-							org.geotools.temporal.reference;version=${bundle.version},
+							org.geotools.styling.visitor;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.temporal;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.temporal.object;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.temporal.reference;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.util;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.xml.transform;version=${bundle.version},
+							org.geotools.xml.transform;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-referencing -->
-							org.geotools.geometry;version=${bundle.version},
-							org.geotools.measure;version=${bundle.version},
+							org.geotools.geometry;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.measure;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.metadata.iso.spatial;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.nature;version=${bundle.version},
-							org.geotools.parameter;version=${bundle.version},
-							org.geotools.referencing;version=${bundle.version},
+							org.geotools.nature;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.parameter;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.referencing.crs;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.referencing.cs;version=${bundle.version},
-							org.geotools.referencing.datum;version=${bundle.version},
-							org.geotools.referencing.factory;version=${bundle.version},
+							org.geotools.referencing.cs;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.datum;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.factory;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.referencing.factory.epsg;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.referencing.factory.gridshift;version=${bundle.version},
-							org.geotools.referencing.factory.wms;version=${bundle.version},
-							org.geotools.referencing.operation;version=${bundle.version},
-							org.geotools.referencing.operation.builder;version=${bundle.version},
-							org.geotools.referencing.operation.matrix;version=${bundle.version},
-							org.geotools.referencing.operation.projection;version=${bundle.version},
-							org.geotools.referencing.operation.transform;version=${bundle.version},
-							org.geotools.referencing.wkt;version=${bundle.version},
+							org.geotools.referencing.factory.gridshift;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.factory.wms;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.operation;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.operation.builder;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.operation.matrix;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.operation.projection;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.operation.transform;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.wkt;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.resources;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.resources.geometry;version=${bundle.version},
+							org.geotools.resources.geometry;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-jts-wrapper -->
-							org.geotools.geometry.jts;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema.geometry;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema.geometry.aggregate;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema.geometry.complex;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema.geometry.geometry;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema.geometry.primitive;version=${bundle.version},
+							org.geotools.geometry.jts;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema.geometry;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema.geometry.aggregate;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema.geometry.complex;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema.geometry.geometry;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema.geometry.primitive;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-xsd-filter -->
-							org.geotools.xml.filter;version=${bundle.version},
-							org.geotools.filter.v1_0;version=${bundle.version},
-							org.geotools.filter.v2_0;version=${bundle.version},
-							org.geotools.filter.v1_1;version=${bundle.version},
+							org.geotools.xml.filter;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.v1_0;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.v2_0;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.v1_1;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-xsd-gml2 -->
-							org.geotools.gml2;version=${bundle.version},
-							org.geotools.gml2.bindings;version=${bundle.version},
+							org.geotools.gml2;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml2.bindings;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-xsd-gml3 -->
-							org.geotools.gml3;version=${bundle.version},
-							org.geotools.gml3.bindings;version=${bundle.version},
-							org.geotools.gml3.bindings.ext;version=${bundle.version},
-							org.geotools.gml3.smil;version=${bundle.version},
-							org.geotools.gml3.v3_2;version=${bundle.version},
-							org.geotools.gml3.v3_2.bindings;version=${bundle.version},
-							org.geotools.gml3.v3_2.gco;version=${bundle.version},
-							org.geotools.gml3.v3_2.gmd;version=${bundle.version},
-							org.geotools.gml3.v3_2.gmx;version=${bundle.version},
-							org.geotools.gml3.v3_2.gsr;version=${bundle.version},
-							org.geotools.gml3.v3_2.gss;version=${bundle.version},
-							org.geotools.gml3.v3_2.gts;version=${bundle.version},
+							org.geotools.gml3;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.bindings;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.bindings.ext;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.smil;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.bindings;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gco;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gmd;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gmx;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gsr;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gss;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gts;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-xsd-core -->
 							org.geotools.xml;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.xml.schema;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.xml.impl;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.xml.handlers.xsi;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.xlink;version=${bundle.version},
-							org.geotools.xs;version=${bundle.version},
-							org.geotools.xs.bindings;version=${bundle.version},
+							org.geotools.xlink;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.xs;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.xs.bindings;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-wfs -->
-							org.geotools.data.wfs;version=${bundle.version},
-							org.geotools.data.wfs.impl;version=${bundle.version},
-							org.geotools.data.wfs.internal;version=${bundle.version},
-							org.geotools.data.wfs.internal.parsers;version=${bundle.version},
-							org.geotools.data.wfs.internal.v1_x;version=${bundle.version},
-							org.geotools.data.wfs.internal.v2_0;version=${bundle.version},
-							org.geotools.data.wfs.internal.v2_0.storedquery;version=${bundle.version},
+							org.geotools.data.wfs;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.impl;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.internal;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.internal.parsers;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.internal.v1_x;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.internal.v2_0;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.internal.v2_0.storedquery;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-metadata -->
-							org.geotools.metadata;version=${bundle.version},
-							org.geotools.metadata.iso;version=${bundle.version},
-							org.geotools.metadata.iso.citation;version=${bundle.version},
-							org.geotools.metadata.iso.extent;version=${bundle.version},
-							org.geotools.metadata.iso.content;version=${bundle.version},
-							org.geotools.resources;version=${bundle.version},
-							org.geotools.resources.i18n;version=${bundle.version},
-							org.geotools.util.logging;version=${bundle.version},
-							org.geotools.io;version=${bundle.version},
+							org.geotools.metadata;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.metadata.iso;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.metadata.iso.citation;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.metadata.iso.extent;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.metadata.iso.content;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.resources;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.resources.i18n;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.util.logging;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.io;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-geojson -->
-							org.geotools.geojson;version=${bundle.version},
-							org.geotools.geojson.feature;version=${bundle.version},
-							org.geotools.geojson.geom;version=${bundle.version},
+							org.geotools.geojson;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geojson.feature;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geojson.geom;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-cql -->
-							org.geotools.filter.text.cql2;version=${bundle.version},
-							org.geotools.filter.text.ecql;version=${bundle.version},
-							org.geotools.filter.text.commons;version=${bundle.version},
-							org.geotools.filter.text.generated.parsers;version=${bundle.version},
-							org.geotools.filter.function;version=${bundle.version},
-							
+							org.geotools.filter.text.cql2;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.text.ecql;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.text.commons;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.text.generated.parsers;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.function;version=${bundle.version};-split-package:=merge-first,
+
 							<!-- gt-shapefile -->
-							org.geotools.data.shapefile.dbf;version=${bundle.version},
-							org.geotools.data.shapefile.fid;version=${bundle.version},
-							org.geotools.data.shapefile.files;version=${bundle.version},
-							org.geotools.data.shapefile.index;version=${bundle.version},
-							org.geotools.data.shapefile.index.quadtree;version=${bundle.version},
-							org.geotools.data.shapefile.index.quadtree.fs;version=${bundle.version},
-							org.geotools.data.shapefile.shp;version=${bundle.version}
-							
+							org.geotools.data.shapefile.dbf;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.fid;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.files;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.index;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.index.quadtree;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.index.quadtree.fs;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.shp;version=${bundle.version};-split-package:=merge-first,
+
+							<!-- si-quantity -->
+							si.uom.quantity,
+
+							<!-- si-units-java8 -->
+							si.uom,
+
+							<!-- systems-common-java8 -->
+							systems.uom.common,
+							systems.uom.common.internal,
+							tec.uom.se.format,
+
+							<!-- systems-quantity -->
+							systems.uom.quantity,
+
+							<!-- uom-lib-common -->
+							tec.uom.lib.common,
+							tec.uom.lib.common.function,
+							tec.uom.lib.common.util,
+
+							<!-- uom-se -->
+							tec.uom.se,
+							tec.uom.se.format,
+							tec.uom.se.function,
+							tec.uom.se.internal,
+							tec.uom.se.internal.format,
+							tec.uom.se.internal.format.I10n,
+							tec.uom.se.quantity,
+							tec.uom.se.quantity.time,
+							tec.uom.se.spi,
+							tec.uom.se.unit
+
 						</Private-Package>
 						<Export-Package>
 							<!-- gt-main -->
 							org.geotools.data;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.data.collection;version=${bundle.version},
-							org.geotools.data.crs;version=${bundle.version},
+							org.geotools.data.collection;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.crs;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.data.memory;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.data.ows;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.data.simple;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.data.sort;version=${bundle.version},
+							org.geotools.data.sort;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.data.store;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.data.view;version=${bundle.version},
+							org.geotools.data.view;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.factory;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.feature;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.feature.collection;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.feature.simple;version=${bundle.version},
-							org.geotools.feature.type;version=${bundle.version},
-							org.geotools.feature.visitor;version=${bundle.version},
+							org.geotools.feature.simple;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.feature.type;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.feature.visitor;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.filter;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.filter.capability;version=${bundle.version},
+							org.geotools.filter.capability;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.filter.expression;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.filter.function;version=${bundle.version},
-							org.geotools.filter.function.math;version=${bundle.version},
-							org.geotools.filter.function.string;version=${bundle.version},
-							org.geotools.filter.identity;version=${bundle.version},
-							org.geotools.filter.spatial;version=${bundle.version},
-							org.geotools.filter.temporal;version=${bundle.version},
-							org.geotools.filter.visitor;version=${bundle.version},
+							org.geotools.filter.function;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.function.math;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.function.string;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.identity;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.spatial;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.temporal;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.visitor;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.geometry;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.geometry.coordinatesequence;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.geometry.jts;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.geometry.jts.coordinatesequence;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.geometry.text;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.gml;version=${bundle.version},
-							org.geotools.gml.producer;version=${bundle.version},
+							org.geotools.gml;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml.producer;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.ows;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.renderer;version=${bundle.version},
+							org.geotools.renderer;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.styling;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.styling.visitor;version=${bundle.version},
-							org.geotools.temporal;version=${bundle.version},
-							org.geotools.temporal.object;version=${bundle.version},
-							org.geotools.temporal.reference;version=${bundle.version},
+							org.geotools.styling.visitor;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.temporal;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.temporal.object;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.temporal.reference;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.util;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.xml.transform;version=${bundle.version},
+							org.geotools.xml.transform;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-referencing -->
-							org.geotools.geometry;version=${bundle.version},
-							org.geotools.measure;version=${bundle.version},
+							org.geotools.geometry;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.measure;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.metadata.iso.spatial;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.nature;version=${bundle.version},
-							org.geotools.parameter;version=${bundle.version},
-							org.geotools.referencing;version=${bundle.version},
+							org.geotools.nature;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.parameter;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.referencing.crs;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.referencing.cs;version=${bundle.version},
-							org.geotools.referencing.datum;version=${bundle.version},
-							org.geotools.referencing.factory;version=${bundle.version},
+							org.geotools.referencing.cs;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.datum;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.factory;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.referencing.factory.epsg;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.referencing.factory.gridshift;version=${bundle.version},
-							org.geotools.referencing.factory.wms;version=${bundle.version},
-							org.geotools.referencing.operation;version=${bundle.version},
-							org.geotools.referencing.operation.builder;version=${bundle.version},
-							org.geotools.referencing.operation.matrix;version=${bundle.version},
-							org.geotools.referencing.operation.projection;version=${bundle.version},
-							org.geotools.referencing.operation.transform;version=${bundle.version},
-							org.geotools.referencing.wkt;version=${bundle.version},
+							org.geotools.referencing.factory.gridshift;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.factory.wms;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.operation;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.operation.builder;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.operation.matrix;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.operation.projection;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.operation.transform;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.referencing.wkt;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.resources;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.resources.geometry;version=${bundle.version},
+							org.geotools.resources.geometry;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-jts-wrapper -->
-							org.geotools.geometry.jts;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema.geometry;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema.geometry.aggregate;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema.geometry.complex;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema.geometry.geometry;version=${bundle.version},
-							org.geotools.geometry.jts.spatialschema.geometry.primitive;version=${bundle.version},
+							org.geotools.geometry.jts;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema.geometry;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema.geometry.aggregate;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema.geometry.complex;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema.geometry.geometry;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geometry.jts.spatialschema.geometry.primitive;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-xsd-filter -->
-							org.geotools.xml.filter;version=${bundle.version},
-							org.geotools.filter.v1_0;version=${bundle.version},
-							org.geotools.filter.v2_0;version=${bundle.version},
-							org.geotools.filter.v1_1;version=${bundle.version},
+							org.geotools.xml.filter;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.v1_0;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.v2_0;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.v1_1;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-xsd-gml2 -->
-							org.geotools.gml2;version=${bundle.version},
-							org.geotools.gml2.bindings;version=${bundle.version},
+							org.geotools.gml2;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml2.bindings;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-xsd-gml3 -->
-							org.geotools.gml3;version=${bundle.version},
-							org.geotools.gml3.bindings;version=${bundle.version},
-							org.geotools.gml3.bindings.ext;version=${bundle.version},
-							org.geotools.gml3.smil;version=${bundle.version},
-							org.geotools.gml3.v3_2;version=${bundle.version},
-							org.geotools.gml3.v3_2.bindings;version=${bundle.version},
-							org.geotools.gml3.v3_2.gco;version=${bundle.version},
-							org.geotools.gml3.v3_2.gmd;version=${bundle.version},
-							org.geotools.gml3.v3_2.gmx;version=${bundle.version},
-							org.geotools.gml3.v3_2.gsr;version=${bundle.version},
-							org.geotools.gml3.v3_2.gss;version=${bundle.version},
-							org.geotools.gml3.v3_2.gts;version=${bundle.version},
+							org.geotools.gml3;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.bindings;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.bindings.ext;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.smil;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.bindings;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gco;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gmd;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gmx;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gsr;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gss;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.gml3.v3_2.gts;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-xsd-core -->
 							org.geotools.xml;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.xml.schema;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.xml.impl;version=${bundle.version};-split-package:=merge-first,
 							org.geotools.xml.handlers.xsi;version=${bundle.version};-split-package:=merge-first,
-							org.geotools.xlink;version=${bundle.version},
-							org.geotools.xs;version=${bundle.version},
-							org.geotools.xs.bindings;version=${bundle.version},
+							org.geotools.xlink;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.xs;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.xs.bindings;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-wfs -->
-							org.geotools.data.wfs;version=${bundle.version},
-							org.geotools.data.wfs.impl;version=${bundle.version},
-							org.geotools.data.wfs.internal;version=${bundle.version},
-							org.geotools.data.wfs.internal.parsers;version=${bundle.version},
-							org.geotools.data.wfs.internal.v1_x;version=${bundle.version},
-							org.geotools.data.wfs.internal.v2_0;version=${bundle.version},
-							org.geotools.data.wfs.internal.v2_0.storedquery;version=${bundle.version},
+							org.geotools.data.wfs;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.impl;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.internal;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.internal.parsers;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.internal.v1_x;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.internal.v2_0;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.wfs.internal.v2_0.storedquery;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-metadata -->
-							org.geotools.metadata;version=${bundle.version},
-							org.geotools.metadata.iso;version=${bundle.version},
-							org.geotools.metadata.iso.citation;version=${bundle.version},
-							org.geotools.metadata.iso.extent;version=${bundle.version},
-							org.geotools.metadata.iso.content;version=${bundle.version},
-							org.geotools.resources;version=${bundle.version},
-							org.geotools.resources.i18n;version=${bundle.version},
-							org.geotools.util.logging;version=${bundle.version},
-							org.geotools.io;version=${bundle.version},
+							org.geotools.metadata;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.metadata.iso;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.metadata.iso.citation;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.metadata.iso.extent;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.metadata.iso.content;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.resources;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.resources.i18n;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.util.logging;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.io;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-geojson -->
-							org.geotools.geojson;version=${bundle.version},
-							org.geotools.geojson.feature;version=${bundle.version},
-							org.geotools.geojson.geom;version=${bundle.version},
+							org.geotools.geojson;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geojson.feature;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.geojson.geom;version=${bundle.version};-split-package:=merge-first,
 
 							<!-- gt-cql -->
-							org.geotools.filter.text.cql2;version=${bundle.version},
-							org.geotools.filter.text.ecql;version=${bundle.version},
-							org.geotools.filter.text.commons;version=${bundle.version},
-							org.geotools.filter.text.generated.parsers;version=${bundle.version},
-							org.geotools.filter.function;version=${bundle.version},
+							org.geotools.filter.text.cql2;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.text.ecql;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.text.commons;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.text.generated.parsers;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.filter.function;version=${bundle.version};-split-package:=merge-first,
 							
 							<!-- gt-shapefile -->
-							org.geotools.data.shapefile.dbf;version=${bundle.version},
-							org.geotools.data.shapefile.fid;version=${bundle.version},
-							org.geotools.data.shapefile.files;version=${bundle.version},
-							org.geotools.data.shapefile.index;version=${bundle.version},
-							org.geotools.data.shapefile.index.quadtree;version=${bundle.version},
-							org.geotools.data.shapefile.index.quadtree.fs;version=${bundle.version},
-							org.geotools.data.shapefile.shp;version=${bundle.version}
+							org.geotools.data.shapefile.dbf;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.fid;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.files;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.index;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.index.quadtree;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.index.quadtree.fs;version=${bundle.version};-split-package:=merge-first,
+							org.geotools.data.shapefile.shp;version=${bundle.version};-split-package:=merge-first,
+
+							<!-- si-quantity -->
+							si.uom.quantity,
+
+							<!-- si-units-java8 -->
+							si.uom,
+
+							<!-- systems-common-java8 -->
+							systems.uom.common,
+							systems.uom.common.internal,
+							tec.uom.se.format,
+
+							<!-- systems-quantity -->
+							systems.uom.quantity,
+
+							<!-- uom-lib-common -->
+							tec.uom.lib.common,
+							tec.uom.lib.common.function,
+							tec.uom.lib.common.util,
+
+							<!-- uom-se -->
+							tec.uom.se,
+							tec.uom.se.format,
+							tec.uom.se.function,
+							tec.uom.se.internal,
+							tec.uom.se.internal.format,
+							tec.uom.se.internal.format.I10n,
+							tec.uom.se.quantity,
+							tec.uom.se.quantity.time,
+							tec.uom.se.spi,
+							tec.uom.se.unit
 						</Export-Package>
 
 						<Import-Package>
+							!org.geotools.*,
 							org.locationtech.jts;version="[1.10.0,1.16.0]",
 							org.locationtech.jts.algorithm;version="[1.10.0,1.16.0]",
 							org.locationtech.jts.algorithm.distance;version="[1.10.0,1.16.0]",
@@ -541,10 +635,10 @@
 							javax.xml.transform.stream,
 							org.w3c.dom,
 							org.picocontainer;version="1.3",
-							javax.measure;version="[1.0-beta-2,1.0-beta-2]",
-							javax.measure.converter;version="[1.0-beta-2,1.0-beta-2]",
-							javax.measure.quantity;version="[1.0-beta-2,1.0-beta-2]",
-							javax.measure.unit;version="[1.0-beta-2,1.0-beta-2]",
+							javax.measure;version="[1.0.0,2.0.0)",
+							javax.measure.format;version="[1.0.0,2.0.0)",
+							javax.measure.quantity;version="[1.0.0,2.0.0)",
+							javax.measure.spi;version="[1.0.0,2.0.0)",
 							*;resolution:=optional
 						</Import-Package>
 					</instructions>
