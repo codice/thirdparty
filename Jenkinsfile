@@ -17,7 +17,7 @@ pipeline {
                     checkout scm
                 }
                 timeout(time: 20, unit: 'MINUTES') {
-                    withMaven(maven: 'M35', jdk: 'jdk8-latest', globalMavenSettingsConfig: 'default-global-settings', mavenSettingsConfig: 'codice-maven-settings', mavenOpts: '${MVN_OPTS} ${LINUX_MVN_RANDOM}') {
+                    withMaven(maven: 'maven-latest', jdk: 'jdk8-latest', globalMavenSettingsConfig: 'default-global-settings', mavenSettingsConfig: 'codice-maven-settings', mavenOpts: '${MVN_OPTS} ${LINUX_MVN_RANDOM}') {
                         sh 'mvn clean install'
                     }
                 }
@@ -36,7 +36,7 @@ pipeline {
                 }
             }
             steps{
-                withMaven(maven: 'M3', jdk: 'jdk8-latest', globalMavenSettingsConfig: 'default-global-settings', mavenSettingsConfig: 'codice-maven-settings', mavenOpts: '${LINUX_MVN_RANDOM}') {
+                withMaven(maven: 'maven-latest', jdk: 'jdk8-latest', globalMavenSettingsConfig: 'default-global-settings', mavenSettingsConfig: 'codice-maven-settings', mavenOpts: '${LINUX_MVN_RANDOM}') {
                     sh 'mvn deploy -DretryFailedDeploymentCount=10'
                 }
             }
