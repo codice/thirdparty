@@ -134,7 +134,7 @@
 		<dependency>
 			<groupId>systems.uom</groupId>
 			<artifactId>systems-quantity</artifactId>
-			<version>0.7.2</version>
+			<version>0.9</version>
 		</dependency>
 		<dependency>
 			<groupId>systems.uom</groupId>
