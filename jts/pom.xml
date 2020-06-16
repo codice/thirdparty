@@ -18,12 +18,13 @@
 	
 	<groupId>org.codice.thirdparty</groupId>
 	<artifactId>jts</artifactId>
-	<version>1.16.0_2</version>
+	<version>1.16.0_3</version>
 	<name>Codice :: Thirdparty :: JTS</name>
 	<packaging>bundle</packaging>
 
 	<properties>
 		<bundle.version>1.16.0</bundle.version>
+		<json-simple.version>1.1.1</json-simple.version>
 	</properties>
 	
 	<dependencies>
@@ -42,6 +43,11 @@
 			<artifactId>jts-io</artifactId>
 			<version>${bundle.version}</version>
 			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>${json-simple.version}</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -101,7 +107,8 @@
 							org.locationtech.jts.planargraph.algorithm;version="${bundle.version}",
 							org.locationtech.jts.precision;version="${bundle.version}",
 							org.locationtech.jts.simplify;version="${bundle.version}",
-							org.locationtech.jts.util;version="${bundle.version}"
+							org.locationtech.jts.util;version="${bundle.version}",
+							org.json.simple;version="${json-simple.version}"
 						</Export-Package>
 					</instructions>
 				</configuration>
