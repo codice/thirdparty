@@ -2,16 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <parent>
-    <artifactId>thirdparty</artifactId>
-    <groupId>org.codice</groupId>
-    <version>1.0.0</version>
-  </parent>
   <modelVersion>4.0.0</modelVersion>
 
+  <groupId>org.codice.thirdparty</groupId>
   <artifactId>cal10n-api</artifactId>
-  <packaging>bundle</packaging>
   <version>0.8.1_1</version>
+  <packaging>bundle</packaging>
+  
+  <name>Codice :: Thirdparty :: CAL10N</name>
   <description>
     As of version 0.8.1, the cal10n-api jar in maven central has an empty Export-Package
     manifest entry, making it unusable in OSGi. This repackages the bundle, exporting the
