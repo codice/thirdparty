@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>thirdparty</artifactId>
+    <groupId>org.codice</groupId>
+    <version>1.0.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>cal10n-api</artifactId>
+  <packaging>bundle</packaging>
+  <version>0.8.1_1</version>
+  <description>
+    As of version 0.8.1, the cal10n-api jar in maven central has an empty Export-Package
+    manifest entry, making it unusable in OSGi. This repackages the bundle, exporting the
+    appropriate packages.
+
+    For more info, see https://github.com/qos-ch/cal10n/pull/2
+  </description>
+
+  <properties>
+    <cal10n.version>0.8.1</cal10n.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>ch.qos.cal10n</groupId>
+      <artifactId>cal10n-api</artifactId>
+      <version>${cal10n.version}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-SymbolicName>cal10n.api</Bundle-SymbolicName>
+            <Bundle-Name>cal10n-api</Bundle-Name>
+            <Bundle-RequiredExecutionEnvironment>J2SE-1.5</Bundle-RequiredExecutionEnvironment>
+            <Private-Package>*</Private-Package>
+            <Export-Package>
+              ch.qos.cal10n,
+              ch.qos.cal10n.util
+            </Export-Package>
+            <Import-Package/>
+          </instructions>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
