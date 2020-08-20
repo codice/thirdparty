@@ -3,12 +3,17 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>thirdparty</artifactId>
+    <groupId>org.codice</groupId>
+    <version>1.0.0</version>
+  </parent>
 
   <groupId>org.codice.thirdparty</groupId>
   <artifactId>cal10n-api</artifactId>
   <version>0.8.1_1</version>
   <packaging>bundle</packaging>
-  
+
   <name>Codice :: Thirdparty :: CAL10N</name>
   <description>
     As of version 0.8.1, the cal10n-api jar in maven central has an empty Export-Package
