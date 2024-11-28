@@ -23,7 +23,7 @@
 	<packaging>bundle</packaging>
 
 	<properties>
-		<bundle.version>1.16.0</bundle.version>
+		<bundle.version>1.16.1</bundle.version>
 		<json-simple.version>1.1.1</json-simple.version>
 	</properties>
 	
