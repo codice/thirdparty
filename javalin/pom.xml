@@ -18,7 +18,7 @@
 
     <groupId>org.codice.thirdparty</groupId>
     <artifactId>javalin</artifactId>
-    <version>3.11.2_1</version>
+    <version>3.11.2_2</version>
     <name>Codice :: Thirdparty :: Javalin</name>
     <packaging>bundle</packaging>
 
@@ -141,6 +141,7 @@
                             freemarker.template.*;resolution:=optional,
                             org.apache.velocity.*;resolution:=optional,
                             org.commonmark.*;resolution:=optional,
+                            org.eclipse.jetty.websocket.*;resolution:=optional,
                             org.jtwig.*;resolution:=optional,
                             org.thymeleaf.*;resolution:=optional,
                             com.fasterxml.jackson.*;resolution:=optional,
