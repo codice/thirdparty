@@ -17,7 +17,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  MAVEN_OPTS: '-Xmx4G -Xms1G -Djava.security.egd=file:/dev/./urandom'
+  MAVEN_OPTS: '-Xmx4G -Xms1G -Djava.security.egd=file:/dev/./urandom --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/sun.reflect.annotation=ALL-UNNAMED -Djavax.xml.accessExternalDTD=all -Djavax.xml.accessExternalSchema=all'
   MAVEN_CLI_OPTS: '-B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
 
 jobs:
