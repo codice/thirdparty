@@ -1,71 +1,15 @@
 name: Deploy
-
 on:
   workflow_dispatch:
     inputs:
       modules:
-        description: 'Modules to deploy (comma-separated, e.g. picocontainer,jts). Leave blank to deploy all.'
+        description: 'Modules to deploy (comma-separated). Leave blank for all.'
         required: false
-
-env:
-  MAVEN_OPTS: '-Xmx4G -Xms1G -Djava.security.egd=file:/dev/./urandom --add-opens java.base/java.lang.reflect=ALL-UNNAMED --add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.io=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/sun.reflect.annotation=ALL-UNNAMED -Djavax.xml.accessExternalDTD=all -Djavax.xml.accessExternalSchema=all'
-  MAVEN_CLI_OPTS: '-B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'
-
 permissions:
   contents: read
   packages: write
-
 jobs:
   deploy:
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-
-      - name: Configure Maven settings
-        uses: s4u/maven-settings-action@v3.0.0
-        with:
-          servers: |
-            [{
-              "id": "releases",
-              "username": "${{ github.actor }}",
-              "password": "${{ secrets.GITHUB_TOKEN }}"
-            },
-            {
-              "id": "snapshots",
-              "username": "${{ github.actor }}",
-              "password": "${{ secrets.GITHUB_TOKEN }}"
-            }]
-
-      - name: Deploy selected modules
-        if: inputs.modules != ''
-        run: |
-          IFS=',' read -ra MODULES <<< "${{ inputs.modules }}"
-          for module in "${MODULES[@]}"; do
-            module=$(echo "$module" | xargs)
-            echo "::group::Deploying $module"
-            mvn deploy $MAVEN_CLI_OPTS \
-              -pl "$module" \
-              -DskipTests=true \
-              -DretryFailedDeploymentCount=10 \
-              -Dreleases.repository.url=https://maven.pkg.github.com/codice/thirdparty \
-              -Dsnapshots.repository.url=https://maven.pkg.github.com/codice/thirdparty
-            echo "::endgroup::"
-          done
-
-      - name: Deploy all modules
-        if: inputs.modules == ''
-        run: |
-          mvn deploy $MAVEN_CLI_OPTS \
-            -DskipTests=true \
-            -DretryFailedDeploymentCount=10 \
-            -Dreleases.repository.url=https://maven.pkg.github.com/codice/thirdparty \
-            -Dsnapshots.repository.url=https://maven.pkg.github.com/codice/thirdparty
+    uses: codice/release-pipelines/.github/workflows/maven-manual-deploy.yml@main
+    with:
+      modules: ${{ inputs.modules }}
