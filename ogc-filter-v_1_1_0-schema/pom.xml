@@ -30,7 +30,7 @@
     <dependency>
       <groupId>org.jvnet.jaxb2_commons</groupId>
       <artifactId>jaxb2-basics-runtime</artifactId>
-      <version>0.9.4</version>
+      <version>0.12.0</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
@@ -119,7 +119,7 @@
             </goals>
             <configuration>
               <tasks>
-                <delete dir="./target/generated-sources/xjc/net/opengis/gml" />
+                <delete dir="./target/generated-sources/xjc/net/opengis/gml"/>
               </tasks>
             </configuration>
           </execution>
